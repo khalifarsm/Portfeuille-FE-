@@ -14,15 +14,15 @@ public class LoginPresenter {
     ConnexionServeur cs=new ConnexionServeur();
     public Personne getUser(final String email, final String pass)
     {
-         Personne personne=new Personne();
+         /*Personne personne=new Personne();
         new Thread(new Runnable() {
             public void run() {
                 Personne p = cs.getUser(email,pass);
                 test(p);
             }
         }).start();
-        //return cs.getUser(email,pass);
-        return personne;
+        //return cs.getUser(email,pass);*/
+        return cs.getUser(email,pass);
     }
 
     public void test(Personne p) {

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/acceuil"
+        android:title="Acceuil" />
+    <item android:id="@+id/historique"
+        android:title="Historique" />
+    <item android:id="@+id/profil"
+        android:title="Profil" />
+    <item android:id="@+id/statisque"
+        android:title="Statistique" />
+</menu>
