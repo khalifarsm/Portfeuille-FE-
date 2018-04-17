@@ -6,23 +6,37 @@ import android.widget.Toast;
 import com.example.mahmoud.portefeuille.Models.Personne;
 import com.example.mahmoud.portefeuille.Service.ConnexionServeur;
 
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
 /**
  * Created by Mahmoud on 02/04/2018.
  */
 
 public class LoginPresenter {
     ConnexionServeur cs=new ConnexionServeur();
-    public Personne getUser(final String email, final String pass)
+
+    public void onUserLoaded(Personne user)
     {
-         /*Personne personne=new Personne();
-        new Thread(new Runnable() {
-            public void run() {
-                Personne p = cs.getUser(email,pass);
-                test(p);
+        //cette methode doit etre redefinie dans l'activity
+    }
+
+    public void getUser(final String email, final String pass)
+    {
+        Call<Personne> call=cs.getUserCall(email,pass);
+        call.enqueue(new Callback<Personne>(){
+            @Override
+            public void onResponse(Call<Personne> call, Response<Personne> response) {
+                Personne user=response.body();
+                onUserLoaded(user);
             }
-        }).start();
-        //return cs.getUser(email,pass);*/
-        return cs.getUser(email,pass);
+
+            @Override
+            public void onFailure(Call<Personne> call, Throwable t) {
+                call.cancel();
+            }
+        });
     }
 
     public void test(Personne p) {

@@ -12,6 +12,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 public class ConnexionServeur {
 	String url="http://192.168.43.63:45455/api/";
@@ -20,50 +21,23 @@ public class ConnexionServeur {
 	public ConnexionServeur()
 	{
 		Retrofit retrofit = new Retrofit.Builder()
-				.baseUrl("https://api.github.com/")
+				.baseUrl(url)
+				.addConverterFactory(GsonConverterFactory.create())
 				.build();
 
 		service = retrofit.create(IService.class);
 	}
 
-	public Personne getUser(String email, String pass)
+	public Call<Personne> getUserCall(String email, String pass)
 	{
+		Call<Personne> call=null;
 		try {
-			Call<Personne> call= service.getUser(email,pass);
-			call.enqueue(new Callback<Personne>(){
-				@Override
-				public void onResponse(Call<Personne> call, Response<Personne> response) {
-					Personne user=response.body();
-					Log.d("ok", user.toString());
-				}
-
-				@Override
-				public void onFailure(Call<Personne> call, Throwable t) {
-
-				}
-			});
+			call= service.getUser(email,pass);
+			return call;
 		} catch (Exception e) {
 			e.printStackTrace();
+			Log.d("ok", e.toString());
 		}
-		/*if(user==null) {
-			Log.d("ok", "getUser: usernull");
-			String jsonString;
-			try {
-				jsonString = Connexion.sendGet(url + "personnes/" + email + "/" + pass);
-				Log.d("ok", jsonString);
-				GsonBuilder builder = new GsonBuilder();
-				builder.setPrettyPrinting();
-
-				Gson gson = builder.create();
-				user = gson.fromJson(jsonString, Personne.class);
-				return user;
-			} catch (Exception e) {
-				// TODO Auto-generated catch block
-				Log.d("ok", e.toString());
-				//e.printStackTrace();
-
-			}
-		}*/
-		return new Personne();
+		return call;
 	}
 }

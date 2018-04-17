@@ -7,6 +7,7 @@ import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.EditText;
 
+import com.example.mahmoud.portefeuille.Models.Personne;
 import com.example.mahmoud.portefeuille.Presenters.LoginPresenter;
 import com.example.mahmoud.portefeuille.R;
 import com.example.mahmoud.portefeuille.Service.ConnexionServeur;
@@ -30,24 +31,26 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         ButterKnife.bind(this);
-        presenter=new LoginPresenter();
+        presenter=new LoginPresenter(){
+            @Override
+            public void onUserLoaded(Personne user) {
+                if(user!=null)
+                {
+                    SharedPreferences prefs= PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+                    prefs.edit().putString("login",loginET.getText().toString()).commit();
+                    prefs.edit().putString("pass",passET.getText().toString()).commit();
+                    Intent intent=new Intent(getApplicationContext(),AcceuilActivity.class);
+                    startActivity(intent);
+                }
+                else
+                    loginET.setError("login ou mot de passe incorrect");
+            }
+        };
     }
 
     @OnClick(R.id.buttonLogin)
     void buttonLoginClic()
     {
-
-        if(presenter.getUser(loginET.getText().toString(),passET.getText().toString())!=null)
-        {
-            SharedPreferences prefs= PreferenceManager.getDefaultSharedPreferences(this);
-            prefs.edit().putString("login",loginET.getText().toString()).commit();
-            prefs.edit().putString("pass",passET.getText().toString()).commit();
-            Intent intent=new Intent(this,AcceuilActivity.class);
-            startActivity(intent);
-        }
-        else
-        {
-            loginET.setError("login ou mot de passe incorrect");
-        }
+        presenter.getUser(loginET.getText().toString(),passET.getText().toString());
     }
 }
