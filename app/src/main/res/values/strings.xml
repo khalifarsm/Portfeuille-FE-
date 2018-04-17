@@ -21,4 +21,5 @@
     <string name="commentaire">Commentaire</string>
     <string name="valeur">Valeur</string>
     <string name="supprimer">Supprimer</string>
+    <string name="date">Date</string>
 </resources>
