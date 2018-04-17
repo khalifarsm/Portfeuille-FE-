@@ -7,7 +7,9 @@ import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.EditText;
 
+import com.example.mahmoud.portefeuille.Presenters.LoginPresenter;
 import com.example.mahmoud.portefeuille.R;
+import com.example.mahmoud.portefeuille.Service.ConnexionServeur;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -21,17 +23,21 @@ public class LoginActivity extends AppCompatActivity {
     @BindView(R.id.editTextPass)
     EditText passET;
 
+    LoginPresenter presenter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         ButterKnife.bind(this);
+        presenter=new LoginPresenter();
     }
 
     @OnClick(R.id.buttonLogin)
     void buttonLoginClic()
     {
-        if(loginET.getText().toString().equals("khalifa") & passET.getText().toString().equals("123456"))
+
+        if(presenter.getUser(loginET.getText().toString(),passET.getText().toString())!=null)
         {
             SharedPreferences prefs= PreferenceManager.getDefaultSharedPreferences(this);
             prefs.edit().putString("login",loginET.getText().toString()).commit();
