@@ -4,7 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import com.example.mahmoud.portefeuille.R;
 
-public class AjoutHistoriqueActivity extends AppCompatActivity {
+public class AjoutHistoriqueActivity extends AppCompatActivity  {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

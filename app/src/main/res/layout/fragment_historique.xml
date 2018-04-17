@@ -8,6 +8,7 @@
 
     <!-- TODO: Update blank fragment layout -->
 
+
     <EditText
         android:id="@+id/editText"
         android:layout_width="300dp"
@@ -15,7 +16,7 @@
         android:layout_gravity="center"
         android:layout_marginTop="30dp"
         android:ems="10"
-        android:inputType="textPersonName"
+        android:inputType="number"
         android:text="@string/valeur" />
 
     <EditText
@@ -23,16 +24,17 @@
         android:layout_width="300dp"
         android:layout_height="100dp"
         android:layout_gravity="center"
+        android:gravity="top"
         android:layout_marginTop="30dp"
-        android:ems="10"
-        android:inputType="textPersonName"
+        android:inputType="text"
         android:text="@string/commentaire" />
 
-    <LinearLayout
+
+    <RadioGroup
         android:layout_width="match_parent"
-        android:layout_height="30dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
         android:layout_marginTop="30dp"
-        android:gravity="center"
         android:orientation="horizontal">
 
         <RadioButton
@@ -41,24 +43,30 @@
             android:layout_height="match_parent"
             android:layout_marginLeft="40dp"
             android:layout_marginStart="40dp"
+            android:layout_weight="1"
             android:text="@string/d_pense" />
-
         <RadioButton
             android:id="@+id/radioButton2"
             android:layout_width="150dp"
             android:layout_height="match_parent"
             android:layout_marginEnd="40dp"
             android:layout_marginRight="40dp"
+            android:layout_weight="1"
             android:text="@string/revenu" />
 
-    </LinearLayout>
+    </RadioGroup>
 
 
-    <DatePicker
-        android:id="@+id/datePicker"
+    <EditText
+        android:id="@+id/editText3"
         android:layout_width="300dp"
-        android:layout_height="50dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
         android:layout_gravity="center"
-        android:layout_marginTop="30dp" />
+        android:ems="10"
+        android:inputType="date"
+        android:text="@string/date" />
+
+
 
 </LinearLayout>

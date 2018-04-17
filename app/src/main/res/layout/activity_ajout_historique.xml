@@ -9,7 +9,7 @@
     <LinearLayout
         android:id="@+id/fragmentContainer"
         android:layout_width="match_parent"
-        android:layout_height="400dp"
+        android:layout_height="350dp"
         android:baselineAligned="false"
         android:orientation="horizontal">
 
@@ -33,7 +33,9 @@
             android:layout_width="120dp"
             android:layout_height="60dp"
             android:layout_marginRight="15dp"
-            android:text="Modifier" />
+            android:layout_marginEnd="15dp"
+            android:text="Modifier"
+            tools:ignore="ButtonStyle" />
 
         <Button
             android:id="@+id/supprimer"
