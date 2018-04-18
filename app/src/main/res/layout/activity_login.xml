@@ -22,6 +22,7 @@
             android:id="@+id/textView2"
             android:layout_width="100dp"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
             android:text="@string/prompt_email" />
 
         <EditText
@@ -42,6 +43,7 @@
             android:id="@+id/textView3"
             android:layout_width="100dp"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
             android:text="@string/prompt_password" />
 
         <EditText

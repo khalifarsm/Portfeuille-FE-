@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.example.mahmoud.portefeuille.Models.Personne;
 import com.example.mahmoud.portefeuille.Presenters.LoginPresenter;
@@ -52,5 +53,18 @@ public class LoginActivity extends AppCompatActivity {
     void buttonLoginClic()
     {
         presenter.getUser(loginET.getText().toString(),passET.getText().toString());
+    }
+
+    @OnClick(R.id.textViewAbout)
+    void aboutClic()
+    {
+        Toast.makeText(getApplicationContext(), "Réalisé par:\nNabil ERRAHALI\nKhalifa RHARBAOUI RASSAME\nMahmoud CHAHTAN", Toast.LENGTH_LONG).show();
+    }
+
+    @OnClick(R.id.textViewLostPass)
+    void lostPassClic()
+    {
+        Intent intent=new Intent(getApplicationContext(),MotDePasseActivity.class);
+        startActivity(intent);
     }
 }

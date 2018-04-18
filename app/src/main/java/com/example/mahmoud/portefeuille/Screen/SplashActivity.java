@@ -23,7 +23,7 @@ public class SplashActivity extends AppCompatActivity {
         SharedPreferences prefs= PreferenceManager.getDefaultSharedPreferences(this);
         String login=prefs.getString("login","default");
         String pass=prefs.getString("pass","default");
-        if(login.equals("khalifa") && pass.equals("123456"))
+        if(false)//login.equals("khalifa") && pass.equals("123456"))
         {
             Intent intent=new Intent(this,AcceuilActivity.class);
             startActivity(intent);
