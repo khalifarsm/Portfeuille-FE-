@@ -27,17 +27,72 @@ public class Personne {
     @SerializedName("pass")
     String pass;
 
+    public int getPersonneID() {
+        return PersonneID;
+    }
+
+    public void setPersonneID(int personneID) {
+        PersonneID = personneID;
+    }
+
+    public String getNom() {
+        return nom;
+    }
+
+    public void setNom(String nom) {
+        this.nom = nom;
+    }
+
+    public String getPrenom() {
+        return prenom;
+    }
+
+    public void setPrenom(String prenom) {
+        this.prenom = prenom;
+    }
+
+    public String getAdresse() {
+        return adresse;
+    }
+
+    public void setAdresse(String adresse) {
+        this.adresse = adresse;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getPass() {
+        return pass;
+    }
+
+    public void setPass(String pass) {
+        this.pass = pass;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
+
+
+
     @SerializedName("image")
     String image;
 
-    @SerializedName("historiques")
-    List<Historique> historiques;
-
-    @SerializedName("periodiques")
-    List<Periodique> periodiques;
 
     public String toString()
     {
         return nom+" "+prenom;
     }
+
+
 }
