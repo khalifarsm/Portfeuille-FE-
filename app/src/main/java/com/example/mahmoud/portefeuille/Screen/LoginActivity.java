@@ -32,7 +32,7 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         ButterKnife.bind(this);
-        presenter=new LoginPresenter(){
+        presenter=new LoginPresenter(this){
             @Override
             public void onUserLoaded(Personne user) {
                 if(user!=null)
@@ -52,7 +52,28 @@ public class LoginActivity extends AppCompatActivity {
     @OnClick(R.id.buttonLogin)
     void buttonLoginClic()
     {
-        presenter.getUser(loginET.getText().toString(),passET.getText().toString());
+        if(loginET.getText().toString().length()==0)
+        {
+            loginET.setError(getResources().getString(R.string.error_field_required));
+        }
+        else
+        {
+            if(passET.getText().toString().length()==0)
+            {
+                passET.setError(getResources().getString(R.string.error_field_required));
+            }
+            else
+            {
+                if(passET.getText().toString().length()<6)
+                {
+                    passET.setError(getResources().getString(R.string.error_incorrect_password));
+                }
+                else
+                {
+                    presenter.getUser(loginET.getText().toString(),passET.getText().toString());
+                }
+            }
+        }
     }
 
     @OnClick(R.id.textViewAbout)

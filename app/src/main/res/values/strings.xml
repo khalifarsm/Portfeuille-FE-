@@ -11,6 +11,7 @@
     <string name="error_incorrect_password">mot de passe incorrect</string>
     <string name="error_field_required">ce champs est obligatoire</string>
     <string name="lost_password">Mot de passe oublié</string>
+    <string name="connexion_failed">échec de connexion au serveur</string>
     <string name="about">A propos</string>
     <string name="permission_rationale">"Contacts permissions are needed for providing email
         completions."

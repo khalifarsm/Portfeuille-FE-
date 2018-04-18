@@ -17,7 +17,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class ConnexionServeur {
 	String url="http://192.168.43.63:45455/api/";
 	IService service;
-	//static Personne user=null;
+
 	public ConnexionServeur()
 	{
 		Retrofit retrofit = new Retrofit.Builder()
