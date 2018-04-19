@@ -55,4 +55,17 @@ public class ConnexionServeur {
 		}
 		return call;
 	}
+
+	public Call<Boolean> emailExistCall(String email)
+	{
+		Call<Boolean> call=null;
+		try {
+			call= service.emailExist(email);
+			return call;
+		} catch (Exception e) {
+			e.printStackTrace();
+			Log.d("ok", e.toString());
+		}
+		return call;
+	}
 }

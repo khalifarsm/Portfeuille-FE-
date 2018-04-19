@@ -19,4 +19,7 @@ public interface IService {
 
     @GET("historiques/{email}/{pass}")
     public Call<List<Historique>> getHistorique(@Path("email") String email, @Path("pass") String pass);
+
+    @GET("historiques/{email}")
+    public Call<Boolean> emailExist(@Path("email") String email);
 }
