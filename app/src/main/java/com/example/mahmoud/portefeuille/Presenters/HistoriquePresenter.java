@@ -42,7 +42,7 @@ public class HistoriquePresenter {
 
             @Override
             public void onFailure(Call<List<Historique>> call, Throwable t) {
-                Toast.makeText(context.getApplicationContext(), t.toString(), Toast.LENGTH_LONG).show();
+                Toast.makeText(context.getApplicationContext(), context.getResources().getString(R.string.connexion_failed), Toast.LENGTH_LONG).show();
                 call.cancel();
             }
         });

@@ -2,6 +2,9 @@ package com.example.mahmoud.portefeuille.Models;
 
 import com.google.gson.annotations.SerializedName;
 
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
@@ -53,8 +56,20 @@ public class Historique {
         this.commentaire = commentaire;
     }
 
-    public String getDate() {
-        return date;
+    public float getDate() {
+        String dateString=this.date.substring(0,9);
+        DateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+        try {
+            Date date=format.parse(dateString);
+            return date.getTime();
+        } catch (ParseException e) {
+            return 0f;
+        }
+    }
+
+    public String getDateString()
+    {
+        return this.date.substring(4,9);
     }
 
     public void setDate(String date) {
