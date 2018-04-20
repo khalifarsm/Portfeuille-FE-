@@ -2,6 +2,7 @@ package com.example.mahmoud.portefeuille.Presenters;
 
 import android.content.Context;
 import android.graphics.Color;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.widget.LinearLayout;
 import android.widget.Toast;
@@ -36,37 +37,56 @@ public class AcceuilPresenter {
             public void onHistoriqueLoaded(List<Historique> historiques) {
                 ArrayList<Entry> entries = new ArrayList<>();
                 ArrayList<Entry> entries2 = new ArrayList<>();
+                ArrayList<Entry> entries3 = new ArrayList<>();
                 ArrayList<String> labels = new ArrayList<String>();
                 int i=0;
-                int epargne=0;
+                int revenu=0;
+                int depenses=0;
+                String chaine="";
+                int min=historiques.get(0).getDate();
+                //find min
+                for (Historique h: historiques)
+                {
+                    if(min>h.getDate())
+                        min=h.getDate();
+                }
+                //////////////////
                 for (Historique h: historiques
                         ) {
-                    //epargne+=h.getValeur();
-                    //entries.add(new BarEntry(h.getDate(), epargne));
-                    //labels.add(h.getDateString());
+                    int indice =h.getDate()-min;
+                    if(h.isRevenu()) {
+                        revenu += h.getValeur();
+                    }
+                    else {
+                        depenses += h.getValeur();
+                    }
+                    entries.add(new Entry( revenu,indice));
+                    entries2.add(new Entry( depenses,indice));
+                    int epargne=revenu-depenses;
+                    if(epargne<0)
+                        epargne=0;
+                    entries3.add(new Entry( epargne,indice));
+                    labels.add(h.getDateString());
+                    chaine+=String.valueOf(indice)+"  "+revenu+" "+depenses+" "+h.getDateString()+"\n";
                 }
-                for(i=0;i<100;i++)
-                {
-                    entries.add(new BarEntry(i+5, i));
-                    entries2.add(new BarEntry(i+10, i));
-                    labels.add(String.valueOf(i+3));
-                    i++;
-                }
-
-                //
-                //
+                Log.d("ok", chaine);
                 //ajouter le graphe a la vue
                 ArrayList<LineDataSet> lines = new ArrayList<LineDataSet> ();
                 LineDataSet dataset = new LineDataSet(entries, "Revenu");
                 int depenseColor=contextAccueill.getColor(R.color.depense);
                 int revenuColor=contextAccueill.getColor(R.color.revenu);
+                int epargneColor=contextAccueill.getColor(R.color.epargne);
                 dataset.setColor(revenuColor);
                 dataset.setCircleColor(revenuColor);
                 LineDataSet dataset2 = new LineDataSet(entries2, "Depenses");
                 dataset2.setColor(depenseColor);
                 dataset2.setCircleColor(depenseColor);
+                LineDataSet dataset3 = new LineDataSet(entries3, "Epargne");
+                dataset2.setColor(epargneColor);
+                dataset2.setCircleColor(epargneColor);
                 lines.add(dataset);
                 lines.add(dataset2);
+                lines.add(dataset3);
 
                 LineChart chart = new LineChart(context);
 
@@ -77,7 +97,7 @@ public class AcceuilPresenter {
                 chart.setData(data);
 
 
-                chart.setDescription("# of times Alice called Bob");
+                chart.setDescription("Dépenses et revenus");
 
                 LinearLayout top = (LinearLayout)contextAccueill.findViewById(R.id.layout);
                 top.addView(chart);

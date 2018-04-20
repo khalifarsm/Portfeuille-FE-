@@ -3,6 +3,7 @@ package com.example.mahmoud.portefeuille.Service;
 import android.util.Log;
 
 import com.example.mahmoud.portefeuille.Models.Historique;
+import com.example.mahmoud.portefeuille.Models.Periodique;
 import com.example.mahmoud.portefeuille.Models.Personne;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -56,6 +57,19 @@ public class ConnexionServeur {
 		return call;
 	}
 
+	public Call<List<Periodique>> getPeriodiqueCall(String email, String pass)
+	{
+		Call<List<Periodique>> call=null;
+		try {
+			call= service.getPeriodique(email,pass);
+			return call;
+		} catch (Exception e) {
+			e.printStackTrace();
+			Log.d("ok", e.toString());
+		}
+		return call;
+	}
+
 	public Call<Boolean> emailExistCall(String email)
 	{
 		Call<Boolean> call=null;
@@ -68,4 +82,46 @@ public class ConnexionServeur {
 		}
 		return call;
 	}
+
+	public void addPeriodique(Periodique periodique)
+	{
+		service.addPeriodique(periodique);
+	}
+
+	public void addHistorique(Historique historique)
+	{
+		service.addHistorique(historique);
+	}
+
+	public void addPersonne(Personne personne)
+	{
+		service.addPersonne(personne);
+	}
+
+	public void removePeriodique(int id)
+	{
+		service.removePeriodique(id);
+	}
+
+	public void removeHistorique(int id)
+	{
+		service.removeHistorique(id);
+	}
+
+	public void updatePeriodique(int id,Periodique periodique)
+	{
+		service.updatePeriodique(id,periodique);
+	}
+
+	public void updateHistorique(int id,Historique historique)
+	{
+		service.updateHistorique(id,historique);
+	}
+
+	public void updatePersonne(int id,Personne personne)
+	{
+		service.updatePersonne(id,personne);
+	}
+
+
 }

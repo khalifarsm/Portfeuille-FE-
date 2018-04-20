@@ -56,20 +56,20 @@ public class Historique {
         this.commentaire = commentaire;
     }
 
-    public float getDate() {
-        String dateString=this.date.substring(0,9);
+    public int getDate() {
+        String dateString=this.date.substring(0,10);
         DateFormat format = new SimpleDateFormat("yyyy-MM-dd");
         try {
             Date date=format.parse(dateString);
-            return date.getTime();
+            return date.getDate()+30*date.getMonth();
         } catch (ParseException e) {
-            return 0f;
+            return 0;
         }
     }
 
     public String getDateString()
     {
-        return this.date.substring(4,9);
+        return this.date.substring(5,10);
     }
 
     public void setDate(String date) {
