@@ -2,10 +2,9 @@ package com.example.mahmoud.portefeuille.Screen;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-import android.widget.Toast;
 
 import com.example.mahmoud.portefeuille.R;
 
