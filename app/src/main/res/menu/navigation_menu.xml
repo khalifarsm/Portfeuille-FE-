@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:id="@+id/acceuil"
-        android:title="Acceuil" />
+        android:title="Acceuil"  android:icon="@drawable/ic_home_black_24px"/>
     <item android:id="@+id/historique"
-        android:title="Historique" />
+        android:title="Historique" android:icon="@drawable/ic_history" />
     <item android:id="@+id/profil"
-        android:title="Profil" />
+        android:title="Profil" android:icon="@drawable/ic_profil"/>
     <item android:id="@+id/statisque"
-        android:title="Statistique" />
+        android:title="Statistique" android:icon="@drawable/ic_statistique"/>
+    <item android:id="@+id/Deconnexion"
+        android:title="Deconnexion" android:icon="@drawable/ic_settings_power_black_24px"/>
 </menu>
