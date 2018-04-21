@@ -1,7 +1,12 @@
 package com.example.mahmoud.portefeuille.Models;
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.util.Base64;
+
 import com.google.gson.annotations.SerializedName;
 
+import java.io.ByteArrayOutputStream;
 import java.util.List;
 
 /**
@@ -75,12 +80,17 @@ public class Personne {
         this.pass = pass;
     }
 
-    public String getImage() {
-        return image;
+    public Bitmap getImage() {
+        byte[] byteArray=Base64.decode(image,Base64.DEFAULT);
+        return BitmapFactory.decodeByteArray(byteArray, 0, byteArray.length);
     }
 
-    public void setImage(String image) {
-        this.image = image;
+    public void setImage(Bitmap bitmap) {
+
+        ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
+        bitmap.compress(Bitmap.CompressFormat.PNG, 100, byteArrayOutputStream);
+        byte[] byteArray = byteArrayOutputStream .toByteArray();
+        image= Base64.encodeToString(byteArray, Base64.DEFAULT);
     }
 
 
