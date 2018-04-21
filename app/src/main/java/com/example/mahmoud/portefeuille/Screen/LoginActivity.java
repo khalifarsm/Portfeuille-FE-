@@ -79,7 +79,7 @@ public class LoginActivity extends AppCompatActivity {
     @OnClick(R.id.textViewAbout)
     void aboutClic()
     {
-        Toast.makeText(getApplicationContext(), "Réalisé par:\nNabil ERRAHALI\nKhalifa RHARBAOUI RASSAME\nMahmoud CHAHTAN", Toast.LENGTH_LONG).show();
+        Toast.makeText(getApplicationContext(), "Réalisé par:\nNabil RAHALI\nKhalifa RHARBAOUI RASSAME\nMahmoud CHAHTAN", Toast.LENGTH_LONG).show();
     }
 
     @OnClick(R.id.textViewLostPass)

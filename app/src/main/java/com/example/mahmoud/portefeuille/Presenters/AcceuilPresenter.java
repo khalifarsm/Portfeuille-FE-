@@ -82,8 +82,8 @@ public class AcceuilPresenter {
                 dataset2.setColor(depenseColor);
                 dataset2.setCircleColor(depenseColor);
                 LineDataSet dataset3 = new LineDataSet(entries3, "Epargne");
-                dataset2.setColor(epargneColor);
-                dataset2.setCircleColor(epargneColor);
+                dataset3.setColor(epargneColor);
+                dataset3.setCircleColor(epargneColor);
                 lines.add(dataset);
                 lines.add(dataset2);
                 lines.add(dataset3);
