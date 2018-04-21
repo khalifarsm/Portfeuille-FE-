@@ -1,10 +1,17 @@
 package com.example.mahmoud.portefeuille.Presenters;
 
+import android.content.Context;
 import android.util.Log;
+import android.view.View;
 import android.widget.Toast;
 
 import com.example.mahmoud.portefeuille.Models.Personne;
+import com.example.mahmoud.portefeuille.R;
 import com.example.mahmoud.portefeuille.Service.ConnexionServeur;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 /**
  * Created by Mahmoud on 02/04/2018.
@@ -12,20 +19,32 @@ import com.example.mahmoud.portefeuille.Service.ConnexionServeur;
 
 public class LoginPresenter {
     ConnexionServeur cs=new ConnexionServeur();
-    public Personne getUser(final String email, final String pass)
+    Context context;
+    public static Personne user;
+    public LoginPresenter(Context context)
     {
-         /*Personne personne=new Personne();
-        new Thread(new Runnable() {
-            public void run() {
-                Personne p = cs.getUser(email,pass);
-                test(p);
-            }
-        }).start();
-        //return cs.getUser(email,pass);*/
-        return cs.getUser(email,pass);
+        this.context=context;
+    }
+    public void onUserLoaded(Personne user)
+    {
+        //cette methode doit etre redefinie dans l'activity
     }
 
-    public void test(Personne p) {
-        Log.v("khalifa", p.toString());
+    public void getUser(final String email, final String pass)
+    {
+        Call<Personne> call=cs.getUserCall(email,pass);
+        call.enqueue(new Callback<Personne>(){
+            @Override
+            public void onResponse(Call<Personne> call, Response<Personne> response) {
+                user=response.body();
+                onUserLoaded(user);
+            }
+
+            @Override
+            public void onFailure(Call<Personne> call, Throwable t) {
+                Toast.makeText(context.getApplicationContext(), context.getResources().getString(R.string.connexion_failed), Toast.LENGTH_LONG).show();
+                call.cancel();
+            }
+        });
     }
 }

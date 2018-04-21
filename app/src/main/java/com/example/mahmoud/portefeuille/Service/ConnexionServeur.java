@@ -2,68 +2,126 @@ package com.example.mahmoud.portefeuille.Service;
 
 import android.util.Log;
 
+import com.example.mahmoud.portefeuille.Models.Historique;
+import com.example.mahmoud.portefeuille.Models.Periodique;
 import com.example.mahmoud.portefeuille.Models.Personne;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
 import java.io.IOException;
+import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 public class ConnexionServeur {
 	String url="http://192.168.43.63:45455/api/";
 	IService service;
-	//static Personne user=null;
+
 	public ConnexionServeur()
 	{
 		Retrofit retrofit = new Retrofit.Builder()
-				.baseUrl("https://api.github.com/")
+				.baseUrl(url)
+				.addConverterFactory(GsonConverterFactory.create())
 				.build();
 
 		service = retrofit.create(IService.class);
 	}
 
-	public Personne getUser(String email, String pass)
+	public Call<Personne> getUserCall(String email, String pass)
 	{
+		Call<Personne> call=null;
 		try {
-			Call<Personne> call= service.getUser(email,pass);
-			call.enqueue(new Callback<Personne>(){
-				@Override
-				public void onResponse(Call<Personne> call, Response<Personne> response) {
-					Personne user=response.body();
-					Log.d("ok", user.toString());
-				}
-
-				@Override
-				public void onFailure(Call<Personne> call, Throwable t) {
-
-				}
-			});
+			call= service.getUser(email,pass);
+			return call;
 		} catch (Exception e) {
 			e.printStackTrace();
+			Log.d("ok", e.toString());
 		}
-		/*if(user==null) {
-			Log.d("ok", "getUser: usernull");
-			String jsonString;
-			try {
-				jsonString = Connexion.sendGet(url + "personnes/" + email + "/" + pass);
-				Log.d("ok", jsonString);
-				GsonBuilder builder = new GsonBuilder();
-				builder.setPrettyPrinting();
-
-				Gson gson = builder.create();
-				user = gson.fromJson(jsonString, Personne.class);
-				return user;
-			} catch (Exception e) {
-				// TODO Auto-generated catch block
-				Log.d("ok", e.toString());
-				//e.printStackTrace();
-
-			}
-		}*/
-		return new Personne();
+		return call;
 	}
+
+	public Call<List<Historique>> getHistoriqueCall(String email, String pass)
+	{
+		Call<List<Historique>> call=null;
+		try {
+			call= service.getHistorique(email,pass);
+			return call;
+		} catch (Exception e) {
+			e.printStackTrace();
+			Log.d("ok", e.toString());
+		}
+		return call;
+	}
+
+	public Call<List<Periodique>> getPeriodiqueCall(String email, String pass)
+	{
+		Call<List<Periodique>> call=null;
+		try {
+			call= service.getPeriodique(email,pass);
+			return call;
+		} catch (Exception e) {
+			e.printStackTrace();
+			Log.d("ok", e.toString());
+		}
+		return call;
+	}
+
+	public Call<Boolean> emailExistCall(String email)
+	{
+		Call<Boolean> call=null;
+		try {
+			call= service.emailExist(email);
+			return call;
+		} catch (Exception e) {
+			e.printStackTrace();
+			Log.d("ok", e.toString());
+		}
+		return call;
+	}
+
+	public void addPeriodique(Periodique periodique)
+	{
+		service.addPeriodique(periodique);
+	}
+
+	public void addHistorique(Historique historique)
+	{
+		service.addHistorique(historique);
+	}
+
+	public void addPersonne(Personne personne)
+	{
+		service.addPersonne(personne);
+	}
+
+	public void removePeriodique(int id)
+	{
+		service.removePeriodique(id);
+	}
+
+	public void removeHistorique(int id)
+	{
+		service.removeHistorique(id);
+	}
+
+	public void updatePeriodique(int id,Periodique periodique)
+	{
+		service.updatePeriodique(id,periodique);
+	}
+
+	public void updateHistorique(int id,Historique historique)
+	{
+		service.updateHistorique(id,historique);
+	}
+
+	public void updatePersonne(int id,Personne personne)
+	{
+		service.updatePersonne(id,personne);
+	}
+
+
 }

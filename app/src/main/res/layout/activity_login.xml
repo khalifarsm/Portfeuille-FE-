@@ -22,14 +22,16 @@
             android:id="@+id/textView2"
             android:layout_width="100dp"
             android:layout_height="wrap_content"
-            android:text="Login" />
+            android:layout_marginLeft="10dp"
+            android:text="@string/prompt_email" />
 
         <EditText
             android:id="@+id/editTextLogin"
             android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="textEmailAddress" />
+            android:inputType="textEmailAddress"
+            android:text="khalifa@gmail.com" />
 
     </LinearLayout>
 
@@ -42,20 +44,39 @@
             android:id="@+id/textView3"
             android:layout_width="100dp"
             android:layout_height="wrap_content"
-            android:text="Mot de passe" />
+            android:layout_marginLeft="10dp"
+            android:text="@string/prompt_password" />
 
         <EditText
             android:id="@+id/editTextPass"
             android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="textPassword" />
+            android:inputType="textPassword"
+            android:text="123456" />
     </LinearLayout>
 
     <Button
         android:id="@+id/buttonLogin"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Valider" />
+        android:layout_gravity="center"
+        android:text="@string/action_sign_in_short" />
+
+    <TextView
+        android:id="@+id/textViewLostPass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:text="@string/lost_password" />
+
+    <TextView
+        android:id="@+id/textViewAbout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:text="@string/about" />
 
 </LinearLayout>
