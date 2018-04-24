@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 
-import com.example.mahmoud.portefeuille.Models.Historique;
 import com.example.mahmoud.portefeuille.R;
 
 public class SplashActivity extends AppCompatActivity {
@@ -30,7 +29,7 @@ public class SplashActivity extends AppCompatActivity {
         }
         else
         {
-            Intent intent=new Intent(this, LoginActivity.class);
+            Intent intent=new Intent(this,LoginActivity.class);
             startActivity(intent);
         }
     }
