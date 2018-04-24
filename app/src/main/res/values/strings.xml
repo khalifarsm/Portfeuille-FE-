@@ -13,11 +13,11 @@
     <string name="lost_password">Mot de passe oublié</string>
     <string name="connexion_failed">échec de connexion au serveur</string>
     <string name="about">A propos</string>
+    <string name="inscription">Inscription</string>
     <string name="permission_rationale">"Contacts permissions are needed for providing email
         completions."
     </string>
 
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="revenu">Revenu</string>
     <string name="d_pense">Dépense</string>

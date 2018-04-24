@@ -27,6 +27,7 @@ public class HistoriqueActivity extends AppCompatActivity implements ListView.On
 
     @BindView(R.id.DrawerLayout)
     DrawerLayout mLinearLayout;
+    View v;
 
     private ListView drawerListView;
     private ActionBarDrawerToggle mToggle;
