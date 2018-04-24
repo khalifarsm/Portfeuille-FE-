@@ -32,7 +32,6 @@ public class SplashActivity extends AppCompatActivity {
                     Intent intent=new Intent(context,AcceuilActivity.class);
                     startActivity(intent);
                 }
-
             }
         };
         SharedPreferences prefs= PreferenceManager.getDefaultSharedPreferences(this);
