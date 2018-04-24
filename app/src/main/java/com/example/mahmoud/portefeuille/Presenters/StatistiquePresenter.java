@@ -72,9 +72,9 @@ public class StatistiquePresenter {
                 ArrayList<BarDataSet> bars = new ArrayList<>();
                 ArrayList<BarDataSet> bars2 = new ArrayList<>();
                 BarDataSet dataset = new BarDataSet(entries, "Revenu");
-                int depenseColor=contextStatistique.getColor(R.color.depense);
-                int revenuColor=contextStatistique.getColor(R.color.revenu);
-                int epargneColor=contextStatistique.getColor(R.color.epargne);
+                int depenseColor=contextStatistique.getResources().getColor(R.color.depense);
+                int revenuColor=contextStatistique.getResources().getColor(R.color.revenu);
+                int epargneColor=contextStatistique.getResources().getColor(R.color.epargne);
                 dataset.setColor(revenuColor);
                 BarDataSet dataset2 = new BarDataSet(entries2, "Depenses");
                 dataset2.setColor(depenseColor);

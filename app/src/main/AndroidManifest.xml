@@ -33,6 +33,7 @@
         <activity android:name=".Screen.HistoriqueActivity" />
         <activity android:name=".Screen.LoginActivity" />
         <activity android:name=".Screen.AjoutHistoriqueActivity" />
+        <activity android:name=".Screen.MenuActivity"></activity>
     </application>
 
 </manifest>

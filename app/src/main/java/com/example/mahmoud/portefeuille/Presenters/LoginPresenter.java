@@ -1,12 +1,14 @@
 package com.example.mahmoud.portefeuille.Presenters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
 import com.example.mahmoud.portefeuille.Models.Personne;
 import com.example.mahmoud.portefeuille.R;
+import com.example.mahmoud.portefeuille.Screen.StatistiqueActivity;
 import com.example.mahmoud.portefeuille.Service.ConnexionServeur;
 
 import retrofit2.Call;
