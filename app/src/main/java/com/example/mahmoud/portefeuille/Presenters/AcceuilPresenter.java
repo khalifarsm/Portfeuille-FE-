@@ -72,16 +72,16 @@ public class AcceuilPresenter {
                 Log.d("ok", chaine);
                 //ajouter le graphe a la vue
                 ArrayList<LineDataSet> lines = new ArrayList<LineDataSet> ();
-                LineDataSet dataset = new LineDataSet(entries, "Revenu");
+                LineDataSet dataset = new LineDataSet(entries, "Revenus (DH)");
                 int depenseColor=contextAccueill.getResources().getColor(R.color.depense);
                 int revenuColor=contextAccueill.getResources().getColor(R.color.revenu);
                 int epargneColor=contextAccueill.getResources().getColor(R.color.epargne);
                 dataset.setColor(revenuColor);
                 dataset.setCircleColor(revenuColor);
-                LineDataSet dataset2 = new LineDataSet(entries2, "Depenses");
+                LineDataSet dataset2 = new LineDataSet(entries2, "Depenses (DH)");
                 dataset2.setColor(depenseColor);
                 dataset2.setCircleColor(depenseColor);
-                LineDataSet dataset3 = new LineDataSet(entries3, "Epargne");
+                LineDataSet dataset3 = new LineDataSet(entries3, "Epargne (DH)");
                 dataset3.setColor(epargneColor);
                 dataset3.setCircleColor(epargneColor);
                 lines.add(dataset);

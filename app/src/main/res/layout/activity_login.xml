@@ -7,84 +7,100 @@
     android:orientation="vertical"
     tools:context="com.example.mahmoud.portefeuille.Screen.LoginActivity">
 
-    <ImageView
-        android:id="@+id/imageView"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="150dp"
-        app:srcCompat="@drawable/iconewallet" />
+        android:layout_height="match_parent">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="70dp"
-        android:orientation="horizontal">
-
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="100dp"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:text="@string/prompt_email" />
+            android:gravity="center"
+            android:orientation="vertical">
 
-        <EditText
-            android:id="@+id/editTextLogin"
-            android:layout_width="250dp"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="textEmailAddress"
-            android:text="khalifa@gmail.com" />
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                app:srcCompat="@drawable/iconewallet" />
 
-    </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="70dp"
-        android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:text="@string/prompt_password" />
 
-        <TextView
-            android:id="@+id/textView3"
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:text="@string/prompt_password" />
+                <EditText
+                    android:id="@+id/editTextPass"
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="textPassword"
+                    android:text="123456" />
+            </LinearLayout>
 
-        <EditText
-            android:id="@+id/editTextPass"
-            android:layout_width="250dp"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="textPassword"
-            android:text="123456" />
-    </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
 
-    <Button
-        android:id="@+id/buttonLogin"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="@string/action_sign_in_short" />
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:text="@string/prompt_email" />
 
-    <TextView
-        android:id="@+id/textViewInscription"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="20dp"
-        android:text="@string/inscription" />
+                <EditText
+                    android:id="@+id/editTextLogin"
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="textEmailAddress"
+                    android:text="khalifa@gmail.com" />
 
-    <TextView
-        android:id="@+id/textViewLostPass"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="20dp"
-        android:text="@string/lost_password" />
+            </LinearLayout>
 
-    <TextView
-        android:id="@+id/textViewAbout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="20dp"
-        android:text="@string/about" />
+            <Button
+                android:id="@+id/buttonLogin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@color/theme"
+                android:layout_margin="20dp"
+                android:text="@string/action_sign_in_short" />
+
+            <TextView
+                android:id="@+id/textViewLostPass"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:text="@string/lost_password" />
+
+            <TextView
+                android:id="@+id/textViewInscription"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:text="@string/inscription" />
+
+            <TextView
+                android:id="@+id/textViewAbout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:text="@string/about" />
+
+        </LinearLayout>
+
+    </ScrollView>
 
 </LinearLayout>

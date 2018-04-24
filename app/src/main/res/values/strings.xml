@@ -5,7 +5,7 @@
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Mot de passe</string>
     <string name="action_sign_in" tools:ignore="StringEscaping">se connecter ou s'inscrire</string>
-    <string name="action_sign_in_short">se connecter</string>
+    <string name="action_sign_in_short">  se connecter  </string>
     <string name="error_invalid_email" tools:ignore="StringEscaping">l'adresse Email n'est pas valide</string>
     <string name="error_invalid_password">mot de passe trop court</string>
     <string name="error_incorrect_password">mot de passe incorrect</string>
