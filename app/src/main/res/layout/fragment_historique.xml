@@ -6,7 +6,6 @@
     android:orientation="vertical"
     tools:context="com.example.mahmoud.portefeuille.Screen.HistoriqueFragment">
 
-    <!-- TODO: Update blank fragment layout -->
 
 
     <EditText
