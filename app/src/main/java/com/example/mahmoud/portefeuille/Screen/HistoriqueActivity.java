@@ -35,6 +35,4 @@ public class HistoriqueActivity extends AppCompatActivity {
         menu  = new MenuClass(this,R.id.DrawerLayout,R.id.navigation);
         menu.monMenu();
     }
-
-
 }

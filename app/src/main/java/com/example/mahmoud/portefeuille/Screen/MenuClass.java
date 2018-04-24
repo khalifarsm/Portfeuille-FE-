@@ -45,6 +45,7 @@ public class MenuClass{
                     @Override
                     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                         item.setChecked(true);
+                        mLinearLayout.closeDrawers();
                         switch (item.toString()) {
                             case "Acceuil":
                                 Intent intent = new Intent(context.getApplicationContext(), AcceuilActivity.class);

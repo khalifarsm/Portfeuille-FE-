@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Portefeuille.iml" filepath="$PROJECT_DIR$/Portefeuille.iml" />
+      <module fileurl="file://D:\monPortefeuille\Portefeuille.iml" filepath="D:\monPortefeuille\Portefeuille.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/monPortefeuille.iml" filepath="$PROJECT_DIR$/monPortefeuille.iml" />
       <module fileurl="file://C:\Users\khalifa\AndroidStudioProjects\Portefeuille\monPortefeuille.iml" filepath="C:\Users\khalifa\AndroidStudioProjects\Portefeuille\monPortefeuille.iml" />
     </modules>
   </component>
