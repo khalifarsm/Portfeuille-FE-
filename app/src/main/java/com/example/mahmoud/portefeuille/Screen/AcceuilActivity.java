@@ -19,7 +19,6 @@ public class AcceuilActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_acceuil);
-
         AcceuilPresenter ap=new AcceuilPresenter(this);
         ap.graphe();
     }
