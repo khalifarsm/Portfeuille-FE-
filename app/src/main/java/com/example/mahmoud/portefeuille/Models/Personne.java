@@ -7,13 +7,14 @@ import android.util.Base64;
 import com.google.gson.annotations.SerializedName;
 
 import java.io.ByteArrayOutputStream;
+import java.io.Serializable;
 import java.util.List;
 
 /**
  * Created by Mahmoud on 02/04/2018.
  */
 
-public class Personne {
+public class Personne implements Serializable{
     @SerializedName("personneID")
     int PersonneID;
 
