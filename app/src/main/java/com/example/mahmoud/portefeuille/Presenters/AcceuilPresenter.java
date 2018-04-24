@@ -73,9 +73,9 @@ public class AcceuilPresenter {
                 //ajouter le graphe a la vue
                 ArrayList<LineDataSet> lines = new ArrayList<LineDataSet> ();
                 LineDataSet dataset = new LineDataSet(entries, "Revenu");
-                int depenseColor=contextAccueill.getColor(R.color.depense);
-                int revenuColor=contextAccueill.getColor(R.color.revenu);
-                int epargneColor=contextAccueill.getColor(R.color.epargne);
+                int depenseColor=contextAccueill.getResources().getColor(R.color.depense);
+                int revenuColor=contextAccueill.getResources().getColor(R.color.revenu);
+                int epargneColor=contextAccueill.getResources().getColor(R.color.epargne);
                 dataset.setColor(revenuColor);
                 dataset.setCircleColor(revenuColor);
                 LineDataSet dataset2 = new LineDataSet(entries2, "Depenses");
