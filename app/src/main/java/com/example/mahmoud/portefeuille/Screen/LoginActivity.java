@@ -88,4 +88,11 @@ public class LoginActivity extends AppCompatActivity {
         Intent intent=new Intent(getApplicationContext(),MotDePasseActivity.class);
         startActivity(intent);
     }
+
+    @OnClick(R.id.textViewInscription)
+    void inscriptionClic()
+    {
+        Intent intent=new Intent(getApplicationContext(),InscriptionActivity.class);
+        startActivity(intent);
+    }
 }
