@@ -25,4 +25,12 @@
     <string name="valeur">Valeur</string>
     <string name="supprimer">Supprimer</string>
     <string name="date">Date</string>
+    <string name="close">Close</string>
+    <string name="open">Open</string>
+    <string name="title_activity_exemple">exemple</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
 </resources>

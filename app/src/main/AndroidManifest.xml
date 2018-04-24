@@ -29,7 +29,6 @@
         <activity android:name=".Screen.MotDePasseActivity" />
         <activity android:name=".Screen.StatistiqueActivity" />
         <activity android:name=".Screen.ProfilActivity" />
-
         <activity android:name=".Screen.ModifierHistoriqueActivity" />
         <activity android:name=".Screen.HistoriqueActivity" />
         <activity android:name=".Screen.LoginActivity" />
