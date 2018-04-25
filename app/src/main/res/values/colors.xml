@@ -7,4 +7,6 @@
     <color name="revenu">#3ef506</color>
     <color name="epargne">#061ef5</color>
     <color name="theme">#9be4b0</color>
+    <color name="header">#0D47A1</color>
+    <color name="list">#BBDEFB</color>
 </resources>

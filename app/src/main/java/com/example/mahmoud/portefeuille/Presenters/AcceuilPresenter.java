@@ -32,7 +32,7 @@ public class AcceuilPresenter {
     public AcceuilPresenter(AcceuilActivity context)
     {
         this.contextAccueill=context;
-        presenter=new HistoriquePresenter(context){
+        presenter = new HistoriquePresenter(context){
             @Override
             public void onHistoriqueLoaded(List<Historique> historiques) {
                 ArrayList<Entry> entries = new ArrayList<>();
