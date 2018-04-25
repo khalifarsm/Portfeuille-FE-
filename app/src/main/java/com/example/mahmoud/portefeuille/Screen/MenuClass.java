@@ -56,7 +56,7 @@ public class MenuClass{
                                 context.startActivity(intentstatistique);
                                 break;
                             case "Historique":
-                                Intent intenthist = new Intent(context.getApplicationContext(), StatistiqueActivity.class);
+                                Intent intenthist = new Intent(context.getApplicationContext(), HistoriqueActivity.class);
                                 context.startActivity(intenthist);
                                 break;
                             case "Profil":
