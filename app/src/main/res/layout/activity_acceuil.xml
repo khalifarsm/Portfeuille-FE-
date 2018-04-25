@@ -20,7 +20,6 @@
 
     </LinearLayout>
     <android.support.design.widget.NavigationView
-        app:headerLayout="@layout/header"
         android:id="@+id/navigationacc"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

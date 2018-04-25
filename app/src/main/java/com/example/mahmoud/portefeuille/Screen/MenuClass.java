@@ -11,7 +11,10 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.TextView;
 
+import com.example.mahmoud.portefeuille.Presenters.LoginPresenter;
 import com.example.mahmoud.portefeuille.R;
 
 import butterknife.BindView;
@@ -42,6 +45,11 @@ public class MenuClass{
         mToggle.syncState();
         context.getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         NavigationView navigationView = context.findViewById(navigation);
+        //nom et prenom
+        View headerLayout = navigationView.inflateHeaderView(R.layout.header);
+        TextView tv=(TextView) headerLayout.findViewById(R.id.textViewUserName);
+        tv.setText(LoginPresenter.user.toString());
+        //
         navigationView.setNavigationItemSelectedListener(
                 new NavigationView.OnNavigationItemSelectedListener() {
                     @Override
