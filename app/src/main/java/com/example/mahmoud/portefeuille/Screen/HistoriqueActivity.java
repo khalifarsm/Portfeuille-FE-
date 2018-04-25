@@ -25,14 +25,12 @@ import butterknife.ButterKnife;
 
 import static android.support.v4.widget.DrawerLayout.*;
 
-public class HistoriqueActivity extends AppCompatActivity {
-    MenuClass menu;
+public class HistoriqueActivity extends MenuActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_historique);
-        menu  = new MenuClass(this,R.id.DrawerLayout,R.id.navigation);
-        menu.monMenu();
+        setMenu(this,R.id.DrawerLayout,R.id.navigation);
     }
 }

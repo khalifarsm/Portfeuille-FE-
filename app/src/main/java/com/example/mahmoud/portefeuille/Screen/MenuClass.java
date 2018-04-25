@@ -2,6 +2,8 @@ package com.example.mahmoud.portefeuille.Screen;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.v4.widget.DrawerLayout;
@@ -56,7 +58,7 @@ public class MenuClass{
                                 context.startActivity(intentstatistique);
                                 break;
                             case "Historique":
-                                Intent intenthist = new Intent(context.getApplicationContext(), StatistiqueActivity.class);
+                                Intent intenthist = new Intent(context.getApplicationContext(), HistoriqueActivity.class);
                                 context.startActivity(intenthist);
                                 break;
                             case "Profil":
@@ -66,6 +68,8 @@ public class MenuClass{
                             case "Deconnexion":
                                 Intent intentdeco = new Intent(context.getApplicationContext(),LoginActivity.class);
                                 context.startActivity(intentdeco);
+                                SharedPreferences prefs= PreferenceManager.getDefaultSharedPreferences(context.getApplicationContext());
+                                prefs.edit().clear().commit();
                                 break;
                         }
                         return true;
