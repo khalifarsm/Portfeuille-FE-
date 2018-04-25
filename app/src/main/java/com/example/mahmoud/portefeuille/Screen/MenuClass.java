@@ -52,24 +52,29 @@ public class MenuClass{
                             case "Acceuil":
                                 Intent intent = new Intent(context.getApplicationContext(), AcceuilActivity.class);
                                 context.startActivity(intent);
+                                context.finish();
                                 break;
                             case "Statistique":
                                 Intent intentstatistique = new Intent(context.getApplicationContext(), StatistiqueActivity.class);
                                 context.startActivity(intentstatistique);
+                                context.finish();
                                 break;
                             case "Historique":
                                 Intent intenthist = new Intent(context.getApplicationContext(), HistoriqueActivity.class);
                                 context.startActivity(intenthist);
+                                context.finish();
                                 break;
                             case "Profil":
                                 Intent intentprofil = new Intent(context.getApplicationContext(), ProfilActivity.class);
                                 context.startActivity(intentprofil);
+                                context.finish();
                                 break;
                             case "Deconnexion":
                                 Intent intentdeco = new Intent(context.getApplicationContext(),LoginActivity.class);
                                 context.startActivity(intentdeco);
                                 SharedPreferences prefs= PreferenceManager.getDefaultSharedPreferences(context.getApplicationContext());
                                 prefs.edit().clear().commit();
+                                context.finish();
                                 break;
                         }
                         return true;

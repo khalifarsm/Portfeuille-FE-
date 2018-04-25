@@ -26,11 +26,13 @@ public class SplashActivity extends AppCompatActivity {
                 {
                     Intent intent=new Intent(context,LoginActivity.class);
                     startActivity(intent);
+                    finish();
                 }
                 else
                 {
                     Intent intent=new Intent(context,AcceuilActivity.class);
                     startActivity(intent);
+                    finish();
                 }
             }
         };

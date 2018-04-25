@@ -42,6 +42,7 @@ public class LoginActivity extends AppCompatActivity {
                     prefs.edit().putString("pass",passET.getText().toString()).commit();
                     Intent intent=new Intent(getApplicationContext(),AcceuilActivity.class);
                     startActivity(intent);
+                    finish();
                 }
                 else
                     loginET.setError("login ou mot de passe incorrect");
