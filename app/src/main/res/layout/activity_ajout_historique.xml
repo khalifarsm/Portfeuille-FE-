@@ -13,7 +13,7 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
         <LinearLayout
-            android:id="@+id/fragmentContainer"
+            android:id= "@+id/fragmentContainer"
             android:layout_width="match_parent"
             android:layout_height="350dp"
             android:baselineAligned="false"
