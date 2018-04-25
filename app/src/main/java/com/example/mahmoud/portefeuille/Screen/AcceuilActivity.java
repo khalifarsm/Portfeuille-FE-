@@ -27,7 +27,6 @@ public class AcceuilActivity extends MenuActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_acceuil);
         setMenu(this,R.id.DrawerLayoutacc,R.id.navigationacc);
-
         AcceuilPresenter ap=new AcceuilPresenter(this);
         ap.graphe();
     }
