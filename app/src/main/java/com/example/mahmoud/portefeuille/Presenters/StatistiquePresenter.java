@@ -53,12 +53,12 @@ public class StatistiquePresenter {
                     int indice =h.getDate()-min;
                     if(h.isRevenu()) {
                         revenu += h.getValeur();
+                        entries.add(new BarEntry( revenu,indice));
                     }
                     else {
                         depenses += h.getValeur();
+                        entries2.add(new BarEntry( depenses,indice));
                     }
-                    entries.add(new BarEntry( revenu,indice));
-                    entries2.add(new BarEntry( depenses,indice));
                     int epargne=revenu-depenses;
                     if(epargne<0)
                         epargne=0;
