@@ -21,7 +21,7 @@ import retrofit2.Response;
 
 public class LoginPresenter {
     ConnexionServeur cs=new ConnexionServeur();
-    Context context;
+    public Context context;
     public static Personne user;
     public LoginPresenter(Context context)
     {
