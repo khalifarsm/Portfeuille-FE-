@@ -25,13 +25,15 @@
                 style="@android:style/Widget.ImageButton"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
+                android:background="@color/blanc"
                 android:layout_weight="1"
-                android:src="@drawable/ajouter_50" />
+                android:src="@drawable/ajouterhi" />
 
         </LinearLayout>
         <ListView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:background="@color/list"
             android:id="@+id/listeHistorique"/>
 
 

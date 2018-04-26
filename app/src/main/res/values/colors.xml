@@ -9,4 +9,5 @@
     <color name="theme">#9be4b0</color>
     <color name="header">#0D47A1</color>
     <color name="list">#BBDEFB</color>
+    <color name="blanc">#FFF</color>
 </resources>

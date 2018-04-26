@@ -16,7 +16,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".Screen.HistoriqueActivity"
+            android:name=".Screen.SplashActivity"
             android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -30,7 +30,7 @@
         <activity android:name=".Screen.StatistiqueActivity" />
         <activity android:name=".Screen.ProfilActivity" />
         <activity android:name=".Screen.ModifierHistoriqueActivity" />
-        <activity android:name=".Screen.SplashActivity" />
+        <activity android:name=".Screen.HistoriqueActivity" />
         <activity android:name=".Screen.LoginActivity" />
         <activity android:name=".Screen.AjoutHistoriqueActivity" />
         <activity android:name=".Screen.MenuActivity"></activity>

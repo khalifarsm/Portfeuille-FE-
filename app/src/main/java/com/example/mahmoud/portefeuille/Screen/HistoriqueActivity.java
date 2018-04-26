@@ -7,10 +7,12 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
@@ -49,6 +51,11 @@ public class HistoriqueActivity extends AppCompatActivity {
         arrayHistorique.add(historique2);
 
         HistoriqueAdapter adapter = new HistoriqueAdapter(this, R.layout.adapter_view_layout,arrayHistorique);
+
+        LayoutInflater inflater = getLayoutInflater();
+        ViewGroup header = (ViewGroup) inflater.inflate(R.layout.header_list_layout,mListView,false);
+        mListView.addHeaderView(header);
+
         mListView.setAdapter(adapter);
     }
 }

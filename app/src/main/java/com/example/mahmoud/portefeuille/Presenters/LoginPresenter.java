@@ -44,6 +44,7 @@ public class LoginPresenter {
 
             @Override
             public void onFailure(Call<Personne> call, Throwable t) {
+                Log.d("ok", "onFailure: connexion ");
                 Toast.makeText(context.getApplicationContext(), context.getResources().getString(R.string.connexion_failed), Toast.LENGTH_LONG).show();
                 call.cancel();
             }

@@ -29,7 +29,7 @@ public class SplashActivity extends AppCompatActivity {
                 }
                 else
                 {
-                    Intent intent=new Intent(context,HistoriqueActivity.class);
+                    Intent intent=new Intent(context,AcceuilActivity.class);
                     startActivity(intent);
                 }
             }
@@ -37,6 +37,6 @@ public class SplashActivity extends AppCompatActivity {
         SharedPreferences prefs= PreferenceManager.getDefaultSharedPreferences(this);
         String login=prefs.getString("login","default");
         String pass=prefs.getString("pass","default");
-       // presenter.getUser(login,pass);
+        presenter.getUser(login,pass);
     }
 }

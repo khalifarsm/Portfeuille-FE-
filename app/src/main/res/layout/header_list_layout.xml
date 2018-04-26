@@ -2,29 +2,33 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/listViewHeader"
     >
 
     <TextView
         android:id="@+id/txtType"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:layout_weight="1"
-        android:text="TextView"
-        android:background="@color/header"/>
+        android:gravity="center"
+        android:background="@color/header"
+        android:text="Type" />
 
     <TextView
         android:id="@+id/txtValeur"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:layout_weight="1"
-        android:text="TextView"
-        android:background="@color/header"/>
+        android:gravity="center"
+        android:background="@color/header"
+        android:text="Valeur" />
 
     <TextView
         android:id="@+id/txt"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:layout_weight="1"
-        android:text="TextView"
-        android:background="@color/header"/>
+        android:gravity="center"
+        android:background="@color/header"
+        android:text="Date" />
 </LinearLayout>
