@@ -53,12 +53,12 @@ public class StatistiquePresenter {
                     int indice =h.getDate()-min;
                     if(h.isRevenu()) {
                         revenu += h.getValeur();
+                        entries.add(new BarEntry( revenu,indice));
                     }
                     else {
                         depenses += h.getValeur();
+                        entries2.add(new BarEntry( depenses,indice));
                     }
-                    entries.add(new BarEntry( revenu,indice));
-                    entries2.add(new BarEntry( depenses,indice));
                     int epargne=revenu-depenses;
                     if(epargne<0)
                         epargne=0;
@@ -71,14 +71,14 @@ public class StatistiquePresenter {
                 ArrayList<LineDataSet> lines = new ArrayList<LineDataSet> ();
                 ArrayList<BarDataSet> bars = new ArrayList<>();
                 ArrayList<BarDataSet> bars2 = new ArrayList<>();
-                BarDataSet dataset = new BarDataSet(entries, "Revenu");
+                BarDataSet dataset = new BarDataSet(entries, "Revenus (DH)");
                 int depenseColor=contextStatistique.getResources().getColor(R.color.depense);
                 int revenuColor=contextStatistique.getResources().getColor(R.color.revenu);
                 int epargneColor=contextStatistique.getResources().getColor(R.color.epargne);
                 dataset.setColor(revenuColor);
-                BarDataSet dataset2 = new BarDataSet(entries2, "Depenses");
+                BarDataSet dataset2 = new BarDataSet(entries2, "Dépenses (DH)");
                 dataset2.setColor(depenseColor);
-                LineDataSet dataset3 = new LineDataSet(entries3, "Epargne");
+                LineDataSet dataset3 = new LineDataSet(entries3, "Epargne (DH)");
                 dataset3.setColor(epargneColor);
                 dataset3.setCircleColor(epargneColor);
                 bars.add(dataset);
@@ -100,8 +100,8 @@ public class StatistiquePresenter {
 
 
                 chart1.setDescription("Revenus");
-                chart1.setDescription("Dépenses");
-                chart1.setDescription("Epargne");
+                chart2.setDescription("Dépenses");
+                chart3.setDescription("Epargne");
 
                 LinearLayout first = (LinearLayout)contextStatistique.findViewById(R.id.firstLayout);
                 LinearLayout secande = (LinearLayout)contextStatistique.findViewById(R.id.secandeLayout);
