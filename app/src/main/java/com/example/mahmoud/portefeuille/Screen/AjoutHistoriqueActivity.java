@@ -10,6 +10,5 @@ public class AjoutHistoriqueActivity extends MenuActivity  {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ajout_historique);
-        setMenu(this,R.id.DrawerLayoutajou,R.id.navigationajou);
     }
 }

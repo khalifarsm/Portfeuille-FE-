@@ -14,6 +14,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -28,17 +30,26 @@ import butterknife.ButterKnife;
 
 import static android.support.v4.widget.DrawerLayout.*;
 
-public class HistoriqueActivity extends AppCompatActivity {
+public class HistoriqueActivity extends MenuActivity {
     MenuClass menu;
     ListView mListView;
+    ImageButton button;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_historique);
-        menu  = new MenuClass(this,R.id.DrawerLayout,R.id.navigation);
-        menu.monMenu();
+        //menu  = new MenuClass(this,R.id.DrawerLayout,R.id.navigation);
+        //menu.monMenu();
+        setMenu(this,R.id.DrawerLayout,R.id.navigation);
 
+        button = (ImageButton) findViewById(R.id.imageButton);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(),AjoutHistoriqueActivity.class));
+            }
+        });
         mListView = (ListView) findViewById(R.id.listeHistorique);
 
         Historique historique0 = new Historique("+",500,"15-02-2018");
@@ -58,4 +69,7 @@ public class HistoriqueActivity extends AppCompatActivity {
 
         mListView.setAdapter(adapter);
     }
+
 }
+
+
