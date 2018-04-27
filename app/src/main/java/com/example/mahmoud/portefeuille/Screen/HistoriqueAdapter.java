@@ -37,7 +37,7 @@ class HistoriqueAdapter extends ArrayAdapter<Historique>{
 
         Boolean type = getItem(position).isRevenu();
         int valeur = getItem(position).getValeur();
-        String date = getItem(position).getDateString();
+        String date = getItem(position).getDateStringAll();
 
         LayoutInflater inflater = LayoutInflater.from(mContext);
         convertView =  inflater.inflate(mResource,parent,false);

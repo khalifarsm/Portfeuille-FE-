@@ -72,6 +72,11 @@ public class Historique {
         return this.date.substring(5,10);
     }
 
+    public String getDateStringAll()
+    {
+        return this.date.substring(0,10);
+    }
+
     public void setDate(String date) {
         this.date = date;
     }
