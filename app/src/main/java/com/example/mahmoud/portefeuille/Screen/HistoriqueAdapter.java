@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.mahmoud.portefeuille.Models.Historique;
@@ -45,10 +46,14 @@ class HistoriqueAdapter extends ArrayAdapter<Historique>{
         TextView tvType = (TextView) convertView.findViewById(R.id.type);
         TextView tvValeur = (TextView) convertView.findViewById(R.id.valeur);
         TextView tvDate = (TextView) convertView.findViewById(R.id.date);
+        LinearLayout linearLayout = (LinearLayout) convertView.findViewById(R.id.adapterHistorique);
+
         if(type) {
             tvType.setText("+");
+            linearLayout.setBackgroundColor(convertView.getResources().getColor(R.color.revenu));
         }else{
             tvType.setText("-");
+            linearLayout.setBackgroundColor(convertView.getResources().getColor(R.color.depense));
         }
         tvValeur.setText(String.valueOf(valeur));
         tvDate.setText(date);
