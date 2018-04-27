@@ -7,16 +7,29 @@
     tools:context="com.example.mahmoud.portefeuille.Screen.HistoriqueFragment">
 
 
+    <TextView
+        android:id="@+id/etCommentaire"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="30dp"
+        android:text="@string/valeur"/>
 
     <EditText
         android:id="@+id/editText"
         android:layout_width="300dp"
         android:layout_height="50dp"
         android:layout_gravity="center"
-        android:layout_marginTop="30dp"
         android:ems="10"
-        android:inputType="number"
-        android:text="@string/valeur" />
+        android:inputType="number" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="30dp"
+        android:text="Commentaire" />
 
     <EditText
         android:id="@+id/editText2"
@@ -24,9 +37,7 @@
         android:layout_height="100dp"
         android:layout_gravity="center"
         android:gravity="top"
-        android:layout_marginTop="30dp"
-        android:inputType="text"
-        android:text="@string/commentaire" />
+        android:inputType="text" />
 
 
     <RadioGroup
@@ -56,15 +67,22 @@
     </RadioGroup>
 
 
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="50dp"
+        android:text="Date" />
+
     <EditText
         android:id="@+id/editText3"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
+
         android:layout_gravity="center"
         android:ems="10"
-        android:inputType="date"
-        android:text="@string/date" />
+        android:inputType="date"/>
 
 
 

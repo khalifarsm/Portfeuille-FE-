@@ -8,6 +8,7 @@ import com.example.mahmoud.portefeuille.Models.Personne;
 import com.example.mahmoud.portefeuille.R;
 import com.example.mahmoud.portefeuille.Service.ConnexionServeur;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import retrofit2.Call;
@@ -20,7 +21,7 @@ import retrofit2.Response;
 
 public class HistoriquePresenter {
     ConnexionServeur cs=new ConnexionServeur();
-    Context context;
+    public Context context;
     public HistoriquePresenter(Context context)
     {
         this.context=context;
@@ -28,6 +29,7 @@ public class HistoriquePresenter {
     public void onHistoriqueLoaded(List<Historique> historiques)
     {
         //cette methode doit etre redefinie dans l'activity
+
     }
 
     public void getHistoriques(final String email, final String pass)
@@ -36,7 +38,7 @@ public class HistoriquePresenter {
         call.enqueue(new Callback<List<Historique>>(){
             @Override
             public void onResponse(Call<List<Historique>> call, Response<List<Historique>> response) {
-                List<Historique> historiques=response.body();
+                List<Historique> historiques = response.body();
                 onHistoriqueLoaded(historiques);
             }
 

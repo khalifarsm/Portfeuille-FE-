@@ -20,6 +20,8 @@ import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.example.mahmoud.portefeuille.Presenters.HistoriquePresenter;
+import com.example.mahmoud.portefeuille.Presenters.LoginPresenter;
 import com.example.mahmoud.portefeuille.R;
 
 import java.util.ArrayList;
@@ -34,14 +36,32 @@ public class HistoriqueActivity extends MenuActivity {
     MenuClass menu;
     ListView mListView;
     ImageButton button;
+    HistoriquePresenter historiquePresenter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_historique);
-        //menu  = new MenuClass(this,R.id.DrawerLayout,R.id.navigation);
-        //menu.monMenu();
+
         setMenu(this,R.id.DrawerLayout,R.id.navigation);
+
+        historiquePresenter = new HistoriquePresenter(this){
+            @Override
+            public void onHistoriqueLoaded(List<com.example.mahmoud.portefeuille.Models.Historique> historiques) {
+                ArrayList<com.example.mahmoud.portefeuille.Models.Historique> arrayHistorique = new ArrayList<>();
+                for(com.example.mahmoud.portefeuille.Models.Historique h: historiques){
+                    arrayHistorique.add(h);
+                }
+
+                HistoriqueAdapter adapter = new HistoriqueAdapter(context, R.layout.adapter_view_layout,arrayHistorique);
+                LayoutInflater inflater = getLayoutInflater();
+                ViewGroup header = (ViewGroup) inflater.inflate(R.layout.header_list_layout,mListView,false);
+                mListView.addHeaderView(header);
+
+                mListView.setAdapter(adapter);
+            }
+        };
+        historiquePresenter.getHistoriques(LoginPresenter.user.getEmail(),LoginPresenter.user.getPass());
 
         button = (ImageButton) findViewById(R.id.imageButton);
         button.setOnClickListener(new View.OnClickListener() {
@@ -52,22 +72,16 @@ public class HistoriqueActivity extends MenuActivity {
         });
         mListView = (ListView) findViewById(R.id.listeHistorique);
 
-        Historique historique0 = new Historique("+",500,"15-02-2018");
+/*        Historique historique0 = new Historique("+",500,"15-02-2018");
         Historique historique1 = new Historique("-",320,"13-01-2017");
         Historique historique2 = new Historique("+",220,"12-12-2013");
 
-        ArrayList<Historique> arrayHistorique = new ArrayList<>();
+
         arrayHistorique.add(historique0);
         arrayHistorique.add(historique1);
-        arrayHistorique.add(historique2);
+        arrayHistorique.add(historique2);*/
 
-        HistoriqueAdapter adapter = new HistoriqueAdapter(this, R.layout.adapter_view_layout,arrayHistorique);
 
-        LayoutInflater inflater = getLayoutInflater();
-        ViewGroup header = (ViewGroup) inflater.inflate(R.layout.header_list_layout,mListView,false);
-        mListView.addHeaderView(header);
-
-        mListView.setAdapter(adapter);
     }
 
 }

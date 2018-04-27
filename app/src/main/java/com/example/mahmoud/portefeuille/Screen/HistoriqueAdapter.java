@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
+import com.example.mahmoud.portefeuille.Models.Historique;
 import com.example.mahmoud.portefeuille.R;
 
 import java.util.ArrayList;
@@ -34,11 +35,9 @@ class HistoriqueAdapter extends ArrayAdapter<Historique>{
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
 
-        String type = getItem(position).getType();
+        Boolean type = getItem(position).isRevenu();
         int valeur = getItem(position).getValeur();
-        String date = getItem(position).getDate();
-
-        Historique historique = new Historique(type, valeur, date);
+        String date = getItem(position).getDateString();
 
         LayoutInflater inflater = LayoutInflater.from(mContext);
         convertView =  inflater.inflate(mResource,parent,false);
@@ -46,8 +45,11 @@ class HistoriqueAdapter extends ArrayAdapter<Historique>{
         TextView tvType = (TextView) convertView.findViewById(R.id.type);
         TextView tvValeur = (TextView) convertView.findViewById(R.id.valeur);
         TextView tvDate = (TextView) convertView.findViewById(R.id.date);
-
-        tvType.setText(type);
+        if(type) {
+            tvType.setText("+");
+        }else{
+            tvType.setText("-");
+        }
         tvValeur.setText(String.valueOf(valeur));
         tvDate.setText(date);
 
