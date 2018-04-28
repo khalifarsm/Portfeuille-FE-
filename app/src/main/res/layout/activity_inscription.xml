@@ -83,6 +83,7 @@
             android:background="@drawable/edittext_default_bg"
             android:drawableLeft="@drawable/lock"
             android:hint="Password"
+            android:password="true"
             android:padding="10dp"
             android:textColorHint="#bbbbbb" />
 
