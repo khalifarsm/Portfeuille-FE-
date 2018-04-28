@@ -23,7 +23,7 @@ import butterknife.ButterKnife;
 
 
 public class HistoriqueFragment extends Fragment implements View.OnClickListener {
-    @BindView(R.id.editText3)
+    @BindView(R.id.etDate)
     EditText eDate;
     private  int jour, mois, annee;
     public HistoriqueFragment() {

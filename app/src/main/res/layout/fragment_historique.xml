@@ -16,7 +16,7 @@
         android:text="@string/valeur"/>
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/etValeur"
         android:layout_width="300dp"
         android:layout_height="50dp"
         android:layout_gravity="center"
@@ -24,7 +24,7 @@
         android:inputType="number" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/etCommentaire"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="50dp"
@@ -41,6 +41,7 @@
 
 
     <RadioGroup
+        android:id="@+id/groupRadioB"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -48,20 +49,23 @@
         android:orientation="horizontal">
 
         <RadioButton
-            android:id="@+id/radioButton"
+            android:id="@+id/rbDepense"
             android:layout_width="150dp"
             android:layout_height="match_parent"
             android:layout_marginLeft="40dp"
             android:layout_marginStart="40dp"
             android:layout_weight="1"
+            android:onClick="onRadioButtonClicked"
             android:text="@string/d_pense" />
+
         <RadioButton
-            android:id="@+id/radioButton2"
+            android:id="@+id/rbRevenu"
             android:layout_width="150dp"
             android:layout_height="match_parent"
             android:layout_marginEnd="40dp"
             android:layout_marginRight="40dp"
             android:layout_weight="1"
+            android:onClick="onRadioButtonClicked"
             android:text="@string/revenu" />
 
     </RadioGroup>
@@ -76,13 +80,13 @@
         android:text="Date" />
 
     <EditText
-        android:id="@+id/editText3"
+        android:id="@+id/etDate"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
 
         android:layout_gravity="center"
         android:ems="10"
-        android:inputType="date"/>
+        android:inputType="date" />
 
 
 

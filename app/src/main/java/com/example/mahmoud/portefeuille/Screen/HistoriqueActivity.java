@@ -71,17 +71,6 @@ public class HistoriqueActivity extends MenuActivity {
             }
         });
         mListView = (ListView) findViewById(R.id.listeHistorique);
-
-/*        Historique historique0 = new Historique("+",500,"15-02-2018");
-        Historique historique1 = new Historique("-",320,"13-01-2017");
-        Historique historique2 = new Historique("+",220,"12-12-2013");
-
-
-        arrayHistorique.add(historique0);
-        arrayHistorique.add(historique1);
-        arrayHistorique.add(historique2);*/
-
-
     }
 
 }
