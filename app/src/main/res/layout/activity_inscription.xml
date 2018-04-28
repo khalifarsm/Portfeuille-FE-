@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -8,7 +9,7 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".Screen.InscriptionActivity"
 
-    android:background="#ffffff">
+    android:background="@drawable/back">
 
     <LinearLayout
         android:orientation="vertical"
@@ -16,46 +17,77 @@
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         android:padding="10dp"
+        android:background="@drawable/linearlayout_bg"
         >
 
         <EditText
-            android:id="@+id/etEmail"
+            android:id="@+id/nom"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/edittext_top_bg"
             android:padding="10dp"
-            android:hint="Email"
+            android:hint="Nom"
             android:textColorHint="#bbbbbb"
-            android:drawableLeft="@drawable/email"/>
+            android:drawableLeft="@drawable/sman"/>
         <EditText
-            android:id="@+id/etUserName"
+            android:id="@+id/prenom"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/edittext_default_bg"
             android:layout_marginTop="-2dp"
             android:padding="10dp"
-            android:hint="User Name"
+            android:hint="Prenom"
             android:textColorHint="#bbbbbb"
-            android:drawableLeft="@drawable/user"/>
+            android:drawableLeft="@drawable/sman"/>
         <EditText
-            android:id="@+id/etPass"
+            android:id="@+id/adresse"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/edittext_default_bg"
+            android:layout_marginTop="-2dp"
+            android:padding="10dp"
+            android:hint="Adresse"
+            android:textColorHint="#bbbbbb"
+            android:drawableLeft="@drawable/mail"/>
+        <EditText
+            android:id="@+id/email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/edittext_default_bg"
+            android:layout_marginTop="-2dp"
+            android:padding="10dp"
+            android:hint="Email"
+            android:textColorHint="#bbbbbb"
+            android:drawableLeft="@drawable/email"/>
+        <EditText
+            android:id="@+id/pass1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/edittext_default_bg"
+            android:layout_marginTop="-2dp"
+            android:padding="10dp"
+            android:hint="Password"
+            android:textColorHint="#bbbbbb"
+            android:drawableLeft="@drawable/lock"/>
+        <EditText
+            android:id="@+id/pass2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/edittext_bottom_bg"
             android:layout_marginTop="-2dp"
             android:padding="10dp"
-            android:hint="Password"
+            android:hint="Confirmer Password"
             android:textColorHint="#bbbbbb"
             android:password="true"
-            android:drawableLeft="@drawable/password"/>
+            android:drawableLeft="@drawable/lock"/>
         <Button
             android:id="@+id/btnSingIn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="10dp"
             android:layout_margin="4dp"
-            android:text="Sign Up"
-            
+            android:text="Enregistrement"
+
             android:background="@drawable/button_default_bg"
             />
     </LinearLayout>
