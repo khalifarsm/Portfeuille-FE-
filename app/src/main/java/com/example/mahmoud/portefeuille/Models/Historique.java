@@ -77,8 +77,8 @@ public class Historique {
         return this.date.substring(0,10);
     }
 
-    public void setDate(Date date) {
-        this.date = date.toString();
+    public void setDate(String date) {
+        this.date = date;
     }
 
     public String toString(){

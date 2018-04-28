@@ -24,7 +24,7 @@
         android:inputType="number" />
 
     <TextView
-        android:id="@+id/etCommentaire"
+        android:id="@+id/tvComment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="50dp"
@@ -32,7 +32,7 @@
         android:text="Commentaire" />
 
     <EditText
-        android:id="@+id/editText2"
+        android:id="@+id/etComment"
         android:layout_width="300dp"
         android:layout_height="100dp"
         android:layout_gravity="center"

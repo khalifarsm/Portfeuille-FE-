@@ -18,7 +18,7 @@ public class AjoutHistoriquePresenter {
     ConnexionServeur connexionServeur = new ConnexionServeur();
     Historique historique = new Historique();
 
-    public void ajoutHistorique(int valeur, String commentaire, Date date , boolean isRevenu){
+    public void ajoutHistorique(int valeur, String commentaire, String date , boolean isRevenu){
         historique.setValeur(valeur);
         historique.setCommentaire(commentaire);
         historique.setDate(date);

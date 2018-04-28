@@ -24,36 +24,35 @@ public class AjoutHistoriqueActivity extends MenuActivity  {
     @BindView(R.id.etValeur)
     EditText etValeur;
 
-    @BindView(R.id.etCommentaire)
-    EditText etCom;
+
 
     @BindView(R.id.etDate)
     EditText etDate;
 
-
-    private String  mCommentaire;
-    private Date mDate;
+    private EditText etCommentaire;
+    private String  mCommentaire, mDate;
     private int mValeur;
     private boolean isRevenu;
 
     AjoutHistoriquePresenter ajoutPresenter;
 
-    @android.support.annotation.RequiresApi(api = Build.VERSION_CODES.N)
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ajout_historique);
-
         ButterKnife.bind(this);
 
-        mValeur = Integer.parseInt(etValeur.getText().toString());
-        mCommentaire = etCom.getText().toString();
-        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+        etCommentaire = (EditText) findViewById(R.id.etComment);
+        String valeur = etValeur.getText().toString();
+
         try {
-            mDate = (Date)format.parse(etDate.getText().toString());
-        } catch (ParseException e) {
-            e.printStackTrace();
+            mValeur = Integer.parseInt(valeur);
+        } catch (NumberFormatException e) {
+            valeur = "";
         }
+        mCommentaire = etCommentaire.getText().toString();
+        mDate = etDate.getText().toString();
 
 
         ajoutPresenter = new AjoutHistoriquePresenter();

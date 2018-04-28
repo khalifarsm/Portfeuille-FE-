@@ -63,7 +63,7 @@ public class HistoriqueFragment extends Fragment implements View.OnClickListener
                 new DatePickerDialog(getActivity(), date, myCalendar
                         .get(Calendar.YEAR), myCalendar.get(Calendar.MONTH),
                         myCalendar.get(Calendar.DAY_OF_MONTH)).show();
-                String format = "dd/MM/yy";
+                String format = "yyyy-MM-dd";
                 SimpleDateFormat sdf = new SimpleDateFormat(format, Locale.FRANCE);
                 eDate.setText(sdf.format(myCalendar.getTime()));
             }
