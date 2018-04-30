@@ -83,9 +83,9 @@ public class ConnexionServeur {
 		return call;
 	}
 
-	public void addPeriodique(Periodique periodique)
+	public Call<Integer> addPeriodique(Periodique periodique)
 	{
-		service.addPeriodique(periodique);
+		return service.addPeriodique(periodique);
 	}
 
 	public Call<Integer> addHistorique(Historique historique)
@@ -93,24 +93,24 @@ public class ConnexionServeur {
 		return service.addHistorique(historique);
 	}
 
-	public void addPersonne(Personne personne)
+	public Call<Integer> addPersonne(Personne personne)
 	{
-		service.addPersonne(personne);
+		return service.addPersonne(personne);
 	}
 
-	public void removePeriodique(int id)
+	public Call<Integer> removePeriodique(int id)
 	{
-		service.removePeriodique(id);
+		return service.removePeriodique(id);
 	}
 
-	public void removeHistorique(int id)
+	public Call<Integer> removeHistorique(int id)
 	{
-		service.removeHistorique(id);
+		return service.removeHistorique(id);
 	}
 
-	public void updatePeriodique(int id,Periodique periodique)
+	public Call<Integer> updatePeriodique(int id,Periodique periodique)
 	{
-		service.updatePeriodique(id,periodique);
+		return service.updatePeriodique(id,periodique);
 	}
 
 	public Call<Integer> updateHistorique(int id,Historique historique)
@@ -118,9 +118,9 @@ public class ConnexionServeur {
 		return service.updateHistorique(id,historique);
 	}
 
-	public void updatePersonne(int id,Personne personne)
+	public Call<Integer> updatePersonne(int id,Personne personne)
 	{
-		service.updatePersonne(id,personne);
+		return service.updatePersonne(id,personne);
 	}
 
 

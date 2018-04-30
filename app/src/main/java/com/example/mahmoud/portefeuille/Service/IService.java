@@ -32,26 +32,26 @@ public interface IService {
     public Call<Boolean> emailExist(@Path("email") String email);
 
     @POST("periodiques")
-    public void addPeriodique(@Body Periodique periodique);
+    public Call<Integer> addPeriodique(@Body Periodique periodique);
 
     @POST("historiques")
     public Call<Integer> addHistorique(@Body Historique historique);
 
     @POST("personnes")
-    public void addPersonne(@Body Personne personne);
+    public Call<Integer> addPersonne(@Body Personne personne);
 
     @DELETE("periodiques/{id}")
-    public void removePeriodique(@Path("id") int id);
+    public Call<Integer> removePeriodique(@Path("id") int id);
 
     @DELETE("historiques/{id}")
-    public void removeHistorique(@Path("id") int id);
+    public Call<Integer> removeHistorique(@Path("id") int id);
 
     @PUT("periodiques/{id}")
-    public void updatePeriodique(@Path("id") int id,@Body Periodique periodique);
+    public Call<Integer> updatePeriodique(@Path("id") int id,@Body Periodique periodique);
 
     @PUT("historiques/{id}")
     public Call<Integer> updateHistorique(@Path("id") int id,@Body Historique historique);
 
     @PUT("personnes/{id}")
-    public void updatePersonne(@Path("id") int id,@Body Personne personne);
+    public Call<Integer> updatePersonne(@Path("id") int id,@Body Personne personne);
 }
