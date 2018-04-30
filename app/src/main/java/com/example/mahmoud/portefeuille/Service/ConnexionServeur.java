@@ -103,7 +103,7 @@ public class ConnexionServeur {
 		return service.removePeriodique(id);
 	}
 
-	public Call<Integer> removeHistorique(int id)
+	public Call<Historique> removeHistorique(int id)
 	{
 		return service.removeHistorique(id);
 	}

@@ -44,7 +44,7 @@ public interface IService {
     public Call<Integer> removePeriodique(@Path("id") int id);
 
     @DELETE("historiques/{id}")
-    public Call<Integer> removeHistorique(@Path("id") int id);
+    public Call<Historique> removeHistorique(@Path("id") int id);
 
     @PUT("periodiques/{id}")
     public Call<Integer> updatePeriodique(@Path("id") int id,@Body Periodique periodique);
