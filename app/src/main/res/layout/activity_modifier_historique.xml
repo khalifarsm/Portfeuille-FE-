@@ -9,7 +9,7 @@
     <LinearLayout
         android:id="@+id/fragmentContainer"
         android:layout_width="match_parent"
-        android:layout_height="400dp"
+        android:layout_height="380dp"
         android:baselineAligned="false"
         android:orientation="horizontal">
 
@@ -25,7 +25,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="100dp"
-        android:gravity="center"
+        android:gravity="center|top"
         android:orientation="horizontal">
 
         <Button

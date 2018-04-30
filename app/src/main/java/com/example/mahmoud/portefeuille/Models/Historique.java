@@ -2,6 +2,7 @@ package com.example.mahmoud.portefeuille.Models;
 
 import com.google.gson.annotations.SerializedName;
 
+import java.io.Serializable;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -11,9 +12,9 @@ import java.util.Date;
  * Created by Mahmoud on 02/04/2018.
  */
 
-public class Historique {
+public class Historique implements Serializable{
     @SerializedName("historiqueID")
-    String historiqueID;
+    int historiqueID;
 
     @SerializedName("valeur")
     int valeur;
@@ -24,11 +25,11 @@ public class Historique {
     @SerializedName("commentaire")
     String commentaire;
 
-    public String getHistoriqueID() {
+    public int getHistoriqueID() {
         return historiqueID;
     }
 
-    public void setHistoriqueID(String historiqueID) {
+    public void setHistoriqueID(int historiqueID) {
         this.historiqueID = historiqueID;
     }
 
@@ -87,4 +88,15 @@ public class Historique {
 
     @SerializedName("date")
     String date;
+
+    @SerializedName("personneID")
+    int personneID;
+
+    public void setPersonne(Personne personne) {
+        this.personneID = personne.getPersonneID();
+    }
+
+    public int getPersonneID() {
+        return personneID;
+    }
 }

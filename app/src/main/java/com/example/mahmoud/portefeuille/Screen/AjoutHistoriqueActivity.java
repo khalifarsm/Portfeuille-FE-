@@ -55,10 +55,9 @@ public class AjoutHistoriqueActivity extends MenuActivity  {
         mDate = etDate.getText().toString();
 
 
-        ajoutPresenter = new AjoutHistoriquePresenter();
+        ajoutPresenter = new AjoutHistoriquePresenter(this);
 
-         ajoutPresenter.ajoutHistorique(mValeur, mCommentaire, mDate, isRevenu);
-
+         ajoutPresenter.ajoutHistorique(111, "RAS with personne", "2016-10-10", false);
     }
 
     public void onRadioButtonClicked(View m){
