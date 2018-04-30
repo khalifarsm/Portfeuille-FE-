@@ -50,7 +50,7 @@ public interface IService {
     public void updatePeriodique(@Path("id") int id,@Body Periodique periodique);
 
     @PUT("historiques/{id}")
-    public void updateHistorique(@Path("id") int id,@Body Historique historique);
+    public Call<Integer> updateHistorique(@Path("id") int id,@Body Historique historique);
 
     @PUT("personnes/{id}")
     public void updatePersonne(@Path("id") int id,@Body Personne personne);

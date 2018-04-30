@@ -113,9 +113,9 @@ public class ConnexionServeur {
 		service.updatePeriodique(id,periodique);
 	}
 
-	public void updateHistorique(int id,Historique historique)
+	public Call<Integer> updateHistorique(int id,Historique historique)
 	{
-		service.updateHistorique(id,historique);
+		return service.updateHistorique(id,historique);
 	}
 
 	public void updatePersonne(int id,Personne personne)
