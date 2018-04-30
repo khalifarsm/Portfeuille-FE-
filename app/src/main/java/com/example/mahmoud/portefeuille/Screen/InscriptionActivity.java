@@ -66,8 +66,9 @@ public class InscriptionActivity extends AppCompatActivity {
             String picturePath = cursor.getString(columnIndex);
             cursor.close();
 
-            ImageView imageView = (ImageView) findViewById(R.id.imageButton);
-            imageView.setImageBitmap(BitmapFactory.decodeFile(picturePath));
+
+            imageButton.setImageBitmap(BitmapFactory.decodeFile(picturePath));
+            setContentView(R.layout.activity_inscription);
 
         }
 
