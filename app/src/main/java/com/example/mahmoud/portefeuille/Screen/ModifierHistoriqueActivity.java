@@ -10,6 +10,7 @@ import android.widget.RadioButton;
 import android.widget.Toast;
 
 import com.example.mahmoud.portefeuille.Models.Historique;
+import com.example.mahmoud.portefeuille.Presenters.ModifierHistoriquePresenter;
 import com.example.mahmoud.portefeuille.R;
 
 import butterknife.BindView;
@@ -38,14 +39,14 @@ public class ModifierHistoriqueActivity extends AppCompatActivity {
     @BindView(R.id.supprimer)
     Button supprimer;
 
+    ModifierHistoriquePresenter modifierHistoriquePresenter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_modifier_historique);
 
         ButterKnife.bind(this);
-
-        //Intent intent = new Intent();
 
         Historique historique = (Historique) getIntent().getSerializableExtra("historique");
         Toast.makeText(this,"voila " + historique.getValeur(),Toast.LENGTH_LONG).show();
@@ -59,6 +60,19 @@ public class ModifierHistoriqueActivity extends AppCompatActivity {
             rbRevenu.setChecked(true);
         }
 
+        int mValeur = Integer.parseInt(etValeur.getText().toString());
+        String mCommentaire = etCommentaire.getText().toString();
+        boolean mIsRevenu;
+        if(rbRevenu.isChecked()){
+            mIsRevenu = true;
+        } else {
+            mIsRevenu = false;
+        }
+        String mDate = etDate.getText().toString();
+
+        modifierHistoriquePresenter = new ModifierHistoriquePresenter();
+
+        modifierHistoriquePresenter.updateHistorique(historique.getHistoriqueID(), mValeur, mCommentaire, mIsRevenu, mDate);
     }
     public void onRadioButtonClicked(View m){
         Boolean checked = ((RadioButton) m).isChecked();
