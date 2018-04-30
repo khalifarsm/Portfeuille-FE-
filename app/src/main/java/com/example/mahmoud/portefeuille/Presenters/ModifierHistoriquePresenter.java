@@ -46,14 +46,14 @@ public class ModifierHistoriquePresenter {
     }
 
     public void deleteHistorique(int id){
-        Call<Integer> call =connexionServeur.removeHistorique(id);
-        call.enqueue(new Callback<Integer>(){
+        Call<Historique> call =connexionServeur.removeHistorique(id);
+        call.enqueue(new Callback<Historique>(){
             @Override
-            public void onResponse(Call<Integer> call, Response<Integer> response) {
+            public void onResponse(Call<Historique> call, Response<Historique> response) {
                 Toast.makeText(context.getApplicationContext(), "Supprimé", Toast.LENGTH_LONG).show();
             }
             @Override
-            public void onFailure(Call<Integer> call, Throwable t) {
+            public void onFailure(Call<Historique> call, Throwable t) {
                 Toast.makeText(context.getApplicationContext(), context.getResources().getString(R.string.connexion_failed), Toast.LENGTH_LONG).show();
             }
         });
