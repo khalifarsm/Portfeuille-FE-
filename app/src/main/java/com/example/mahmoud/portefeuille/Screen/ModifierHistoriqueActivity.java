@@ -69,7 +69,7 @@ public class ModifierHistoriqueActivity extends AppCompatActivity {
 
 
 
-        modifierHistoriquePresenter = new ModifierHistoriquePresenter();
+        modifierHistoriquePresenter = new ModifierHistoriquePresenter(this);
         modifier.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
