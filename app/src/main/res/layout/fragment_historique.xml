@@ -34,7 +34,7 @@
     <EditText
         android:id="@+id/etComment"
         android:layout_width="300dp"
-        android:layout_height="100dp"
+        android:layout_height="80dp"
         android:layout_gravity="center"
         android:gravity="top"
         android:inputType="text" />

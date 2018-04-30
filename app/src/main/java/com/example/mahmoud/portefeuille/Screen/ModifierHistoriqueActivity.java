@@ -67,19 +67,20 @@ public class ModifierHistoriqueActivity extends AppCompatActivity {
             rbRevenu.setChecked(true);
         }
 
-        mValeur = Integer.parseInt(etValeur.getText().toString());
-        mCommentaire = etCommentaire.getText().toString();
-        if(rbRevenu.isChecked()){
-            mIsRevenu = true;
-        } else {
-            mIsRevenu = false;
-        }
-        mDate = etDate.getText().toString();
+
 
         modifierHistoriquePresenter = new ModifierHistoriquePresenter(this);
         modifier.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                mValeur = Integer.parseInt(etValeur.getText().toString());
+                mCommentaire = etCommentaire.getText().toString();
+                if(rbRevenu.isChecked()){
+                    mIsRevenu = true;
+                } else {
+                    mIsRevenu = false;
+                }
+                mDate = etDate.getText().toString();
                 modifierHistoriquePresenter.updateHistorique(historique.getHistoriqueID(), mValeur, mCommentaire, mIsRevenu, mDate);
             }
         });
