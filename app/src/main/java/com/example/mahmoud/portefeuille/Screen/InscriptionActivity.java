@@ -1,8 +1,16 @@
 package com.example.mahmoud.portefeuille.Screen;
 
+import android.content.Intent;
+import android.database.Cursor;
+import android.graphics.BitmapFactory;
+import android.net.Uri;
+import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.view.View;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -18,6 +26,8 @@ import static com.example.mahmoud.portefeuille.Presenters.InscriptionPresenter.v
 import static com.example.mahmoud.portefeuille.Presenters.InscriptionPresenter.verificationPass;
 
 public class InscriptionActivity extends AppCompatActivity {
+    private static int RESULT_LOAD_IMAGE = 1;
+
     @BindView(R.id.nom)
     TextView nom;
     @BindView(R.id.prenom)
@@ -30,7 +40,8 @@ public class InscriptionActivity extends AppCompatActivity {
     TextView pass1;
     @BindView(R.id.pass2)
     TextView pass2;
-
+    @BindView(R.id.imageButton)
+    ImageButton imageButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +50,30 @@ public class InscriptionActivity extends AppCompatActivity {
         ButterKnife.bind(this);
 
     }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (requestCode == RESULT_LOAD_IMAGE && resultCode == RESULT_OK && null != data) {
+            Uri selectedImage = data.getData();
+            String[] filePathColumn = { MediaStore.Images.Media.DATA };
+
+            Cursor cursor = getContentResolver().query(selectedImage, filePathColumn, null, null, null);
+            cursor.moveToFirst();
+
+            int columnIndex = cursor.getColumnIndex(filePathColumn[0]);
+            String picturePath = cursor.getString(columnIndex);
+            cursor.close();
+
+            ImageView imageView = (ImageView) findViewById(R.id.imageButton);
+            imageView.setImageBitmap(BitmapFactory.decodeFile(picturePath));
+
+        }
+
+
+    }
+
 
 
     @OnClick(R.id.btnSingIn)
@@ -65,6 +100,16 @@ public class InscriptionActivity extends AppCompatActivity {
         if (!format){
             Toast.makeText(getApplicationContext(),"Revoir votre Email",Toast.LENGTH_LONG);
         }
+
+    }
+    @OnClick(R.id.imageButton)
+    public void clickimg(View arg0 ){
+
+        Intent i = new Intent(
+                Intent.ACTION_PICK,
+                android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+
+        startActivityForResult(i, RESULT_LOAD_IMAGE);
     }
 
 }
