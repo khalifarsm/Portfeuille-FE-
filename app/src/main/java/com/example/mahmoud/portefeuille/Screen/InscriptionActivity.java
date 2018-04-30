@@ -43,6 +43,7 @@ public class InscriptionActivity extends AppCompatActivity {
     @BindView(R.id.imageButton)
     ImageButton imageButton;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
