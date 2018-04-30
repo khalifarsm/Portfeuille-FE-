@@ -56,7 +56,7 @@ public class ModifierHistoriqueActivity extends AppCompatActivity {
         ButterKnife.bind(this);
 
         historique = (Historique) getIntent().getSerializableExtra("historique");
-        Toast.makeText(this,"voila " + historique.getValeur(),Toast.LENGTH_LONG).show();
+        //Toast.makeText(this,"voila " + historique.getValeur(),Toast.LENGTH_LONG).show();
 
         etValeur.setText(String.valueOf(historique.getValeur()));
         etCommentaire.setText(String.valueOf(historique.getCommentaire()));
@@ -82,6 +82,15 @@ public class ModifierHistoriqueActivity extends AppCompatActivity {
                 }
                 mDate = etDate.getText().toString();
                 modifierHistoriquePresenter.updateHistorique(historique.getHistoriqueID(), mValeur, mCommentaire, mIsRevenu, mDate);
+                startActivity(new Intent(getApplication(),HistoriqueActivity.class));
+            }
+        });
+
+        supprimer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                modifierHistoriquePresenter.deleteHistorique(historique.getHistoriqueID());
+                startActivity(new Intent(getApplication(),HistoriqueActivity.class));
             }
         });
 

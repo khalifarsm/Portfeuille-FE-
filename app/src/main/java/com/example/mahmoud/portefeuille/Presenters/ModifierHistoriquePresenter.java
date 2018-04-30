@@ -23,7 +23,7 @@ public class ModifierHistoriquePresenter {
         this.context=context;
     }
 
-    public void updateHistorique(int id, int valeur, String commentaire, boolean isRevenu, String date){
+    public void updateHistorique(int id, int valeur, String commentaire, boolean isRevenu, String date) {
         Historique historique = new Historique();
         historique.setValeur(valeur);
         historique.setCommentaire(commentaire);
@@ -31,8 +31,8 @@ public class ModifierHistoriquePresenter {
         historique.setDate(date);
         historique.setPersonne(LoginPresenter.user);
 
-        Call<Integer> call =connexionServeur.updateHistorique(id, historique);
-        call.enqueue(new Callback<Integer>(){
+        Call<Integer> call = connexionServeur.updateHistorique(id, historique);
+        call.enqueue(new Callback<Integer>() {
             @Override
             public void onResponse(Call<Integer> call, Response<Integer> response) {
                 Toast.makeText(context.getApplicationContext(), "Modifié", Toast.LENGTH_LONG).show();
@@ -44,5 +44,20 @@ public class ModifierHistoriquePresenter {
             }
         });
     }
+
+    public void deleteHistorique(int id){
+        Call<Integer> call =connexionServeur.removeHistorique(id);
+        call.enqueue(new Callback<Integer>(){
+            @Override
+            public void onResponse(Call<Integer> call, Response<Integer> response) {
+                Toast.makeText(context.getApplicationContext(), "Supprimé", Toast.LENGTH_LONG).show();
+            }
+            @Override
+            public void onFailure(Call<Integer> call, Throwable t) {
+                Toast.makeText(context.getApplicationContext(), context.getResources().getString(R.string.connexion_failed), Toast.LENGTH_LONG).show();
+            }
+        });
+    }
+
 
 }
