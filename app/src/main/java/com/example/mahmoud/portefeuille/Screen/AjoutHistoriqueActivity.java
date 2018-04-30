@@ -57,7 +57,7 @@ public class AjoutHistoriqueActivity extends MenuActivity  {
 
         ajoutPresenter = new AjoutHistoriquePresenter(this);
 
-         ajoutPresenter.ajoutHistorique(111, "RAS", "2016-10-10", false);
+         ajoutPresenter.ajoutHistorique(111, "RAS with personne", "2016-10-10", false);
     }
 
     public void onRadioButtonClicked(View m){

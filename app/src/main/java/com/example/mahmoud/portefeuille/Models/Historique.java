@@ -88,4 +88,15 @@ public class Historique implements Serializable{
 
     @SerializedName("date")
     String date;
+
+    @SerializedName("personneID")
+    int personneID;
+
+    public void setPersonne(Personne personne) {
+        this.personneID = personne.getPersonneID();
+    }
+
+    public int getPersonneID() {
+        return personneID;
+    }
 }

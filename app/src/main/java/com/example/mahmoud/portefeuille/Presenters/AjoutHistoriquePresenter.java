@@ -35,6 +35,7 @@ public class AjoutHistoriquePresenter {
         historique.setCommentaire(commentaire);
         historique.setDate(date);
         historique.setRevenu(isRevenu);
+        historique.setPersonne(LoginPresenter.user);
         Call<Integer> call=connexionServeur.addHistorique(historique);
         call.enqueue(new Callback<Integer>(){
             @Override
