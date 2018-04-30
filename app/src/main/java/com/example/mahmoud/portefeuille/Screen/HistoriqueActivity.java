@@ -20,6 +20,7 @@ import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.example.mahmoud.portefeuille.Models.Historique;
 import com.example.mahmoud.portefeuille.Presenters.HistoriquePresenter;
 import com.example.mahmoud.portefeuille.Presenters.LoginPresenter;
 import com.example.mahmoud.portefeuille.R;
@@ -48,7 +49,7 @@ public class HistoriqueActivity extends MenuActivity {
         historiquePresenter = new HistoriquePresenter(this){
             @Override
             public void onHistoriqueLoaded(List<com.example.mahmoud.portefeuille.Models.Historique> historiques) {
-                ArrayList<com.example.mahmoud.portefeuille.Models.Historique> arrayHistorique = new ArrayList<>();
+                final ArrayList<com.example.mahmoud.portefeuille.Models.Historique> arrayHistorique = new ArrayList<>();
                 for(com.example.mahmoud.portefeuille.Models.Historique h: historiques){
                     arrayHistorique.add(h);
                 }
@@ -59,6 +60,15 @@ public class HistoriqueActivity extends MenuActivity {
                 mListView.addHeaderView(header);
 
                 mListView.setAdapter(adapter);
+                mListView.setOnItemClickListener(new android.widget.AdapterView.OnItemClickListener(){
+                    @Override
+                    public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
+                        Intent intent = new Intent(getApplicationContext(),ModifierHistoriqueActivity.class);
+                        Historique  historique = (Historique) mListView.getItemAtPosition(position);
+                        intent.putExtra("historique", historique);
+                        startActivity(intent);
+                    }
+                });
             }
         };
         historiquePresenter.getHistoriques(LoginPresenter.user.getEmail(),LoginPresenter.user.getPass());
