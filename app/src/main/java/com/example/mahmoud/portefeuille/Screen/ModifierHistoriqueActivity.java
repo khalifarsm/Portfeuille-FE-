@@ -41,6 +41,13 @@ public class ModifierHistoriqueActivity extends AppCompatActivity {
 
     ModifierHistoriquePresenter modifierHistoriquePresenter;
 
+    Historique historique;
+
+    int mValeur;
+    String mCommentaire;
+    boolean mIsRevenu;
+    String mDate;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,7 +55,7 @@ public class ModifierHistoriqueActivity extends AppCompatActivity {
 
         ButterKnife.bind(this);
 
-        Historique historique = (Historique) getIntent().getSerializableExtra("historique");
+        historique = (Historique) getIntent().getSerializableExtra("historique");
         Toast.makeText(this,"voila " + historique.getValeur(),Toast.LENGTH_LONG).show();
 
         etValeur.setText(String.valueOf(historique.getValeur()));
@@ -60,19 +67,23 @@ public class ModifierHistoriqueActivity extends AppCompatActivity {
             rbRevenu.setChecked(true);
         }
 
-        int mValeur = Integer.parseInt(etValeur.getText().toString());
-        String mCommentaire = etCommentaire.getText().toString();
-        boolean mIsRevenu;
+        mValeur = Integer.parseInt(etValeur.getText().toString());
+        mCommentaire = etCommentaire.getText().toString();
         if(rbRevenu.isChecked()){
             mIsRevenu = true;
         } else {
             mIsRevenu = false;
         }
-        String mDate = etDate.getText().toString();
+        mDate = etDate.getText().toString();
 
         modifierHistoriquePresenter = new ModifierHistoriquePresenter();
+        modifier.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                modifierHistoriquePresenter.updateHistorique(historique.getHistoriqueID(), mValeur, mCommentaire, mIsRevenu, mDate);
+            }
+        });
 
-        modifierHistoriquePresenter.updateHistorique(historique.getHistoriqueID(), mValeur, mCommentaire, mIsRevenu, mDate);
     }
     public void onRadioButtonClicked(View m){
         Boolean checked = ((RadioButton) m).isChecked();
