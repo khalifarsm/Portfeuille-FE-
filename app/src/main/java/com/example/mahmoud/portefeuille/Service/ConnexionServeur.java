@@ -88,9 +88,9 @@ public class ConnexionServeur {
 		service.addPeriodique(periodique);
 	}
 
-	public void addHistorique(Historique historique)
+	public Call<Integer> addHistorique(Historique historique)
 	{
-		service.addHistorique(historique);
+		return service.addHistorique(historique);
 	}
 
 	public void addPersonne(Personne personne)

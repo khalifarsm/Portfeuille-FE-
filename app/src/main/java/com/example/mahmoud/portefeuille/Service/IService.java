@@ -35,7 +35,7 @@ public interface IService {
     public void addPeriodique(@Body Periodique periodique);
 
     @POST("historiques")
-    public void addHistorique(@Body Historique historique);
+    public Call<Integer> addHistorique(@Body Historique historique);
 
     @POST("personnes")
     public void addPersonne(@Body Personne personne);

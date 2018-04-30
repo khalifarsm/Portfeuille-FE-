@@ -14,7 +14,7 @@ import java.util.Date;
 
 public class Historique implements Serializable{
     @SerializedName("historiqueID")
-    String historiqueID;
+    int historiqueID;
 
     @SerializedName("valeur")
     int valeur;
@@ -25,11 +25,11 @@ public class Historique implements Serializable{
     @SerializedName("commentaire")
     String commentaire;
 
-    public String getHistoriqueID() {
+    public int getHistoriqueID() {
         return historiqueID;
     }
 
-    public void setHistoriqueID(String historiqueID) {
+    public void setHistoriqueID(int historiqueID) {
         this.historiqueID = historiqueID;
     }
 
