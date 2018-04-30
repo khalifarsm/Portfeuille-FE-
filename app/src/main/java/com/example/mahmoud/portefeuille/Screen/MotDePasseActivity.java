@@ -13,6 +13,8 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
+import static com.example.mahmoud.portefeuille.Presenters.InscriptionPresenter.isValidEmail;
+
 public class MotDePasseActivity extends AppCompatActivity {
     @BindView(R.id.email)
     TextView email;
@@ -32,15 +34,23 @@ public class MotDePasseActivity extends AppCompatActivity {
     }
     @OnClick(R.id.btnmodif)
     public void btn(){
-        Intent i = new Intent(Intent.ACTION_SEND);
-        i.setType("message/rfc822");
-        i.putExtra(Intent.EXTRA_EMAIL  , email.getText());
-        i.putExtra(Intent.EXTRA_SUBJECT, "Changement de code");
-        i.putExtra(Intent.EXTRA_TEXT   , "body of email");
-        try {
-            startActivity(Intent.createChooser(i, "Send mail..."));
-        } catch (android.content.ActivityNotFoundException ex) {
-            Toast.makeText(getApplicationContext(), "There are no email clients installed.", Toast.LENGTH_LONG).show();
+        CharSequence eemail=email.getText();
+        boolean format=isValidEmail(eemail);
+        //verifier si le format email est valide
+        if (!format){
+            Toast.makeText(getApplicationContext(),"Revoir votre Email",Toast.LENGTH_LONG);
+        }
+        else {
+            Intent i = new Intent(Intent.ACTION_SEND);
+            i.setType("message/rfc822");
+            i.putExtra(Intent.EXTRA_EMAIL, email.getText());
+            i.putExtra(Intent.EXTRA_SUBJECT, "Changement de code");
+            i.putExtra(Intent.EXTRA_TEXT, "body of email");
+            try {
+                startActivity(Intent.createChooser(i, "Send mail..."));
+            } catch (android.content.ActivityNotFoundException ex) {
+                Toast.makeText(getApplicationContext(), "There are no email clients installed.", Toast.LENGTH_LONG).show();
+            }
         }
     }
 }
