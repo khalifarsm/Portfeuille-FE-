@@ -76,7 +76,7 @@ public class ModifierHistoriqueActivity extends AppCompatActivity {
         }
         mDate = etDate.getText().toString();
 
-        modifierHistoriquePresenter = new ModifierHistoriquePresenter();
+        modifierHistoriquePresenter = new ModifierHistoriquePresenter(this);
         modifier.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

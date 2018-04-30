@@ -18,7 +18,7 @@ import retrofit2.Response;
 public class ModifierHistoriquePresenter {
     ConnexionServeur connexionServeur = new ConnexionServeur();
     Context context;
-    ModifierHistoriquePresenter(Context context)
+    public ModifierHistoriquePresenter(Context context)
     {
         this.context=context;
     }
