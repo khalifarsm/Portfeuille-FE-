@@ -3,11 +3,8 @@ package com.example.mahmoud.portefeuille.Presenters;
 import android.content.Context;
 import android.widget.Toast;
 
-import com.example.mahmoud.portefeuille.Models.Historique;
 import com.example.mahmoud.portefeuille.R;
 import com.example.mahmoud.portefeuille.Service.ConnexionServeur;
-
-import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;
