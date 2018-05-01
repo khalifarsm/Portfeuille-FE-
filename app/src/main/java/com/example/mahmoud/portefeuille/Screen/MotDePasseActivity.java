@@ -68,7 +68,7 @@ public class MotDePasseActivity extends AppCompatActivity {
         }
         else {
             p.emailExist("email");
-            //todo: verifier l'existance de l email dans la base de donnés
+            // verifier l'existance de l email dans la base de donnés
 
         }
     }
