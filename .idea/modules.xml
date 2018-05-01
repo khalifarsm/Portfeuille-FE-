@@ -4,7 +4,8 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Portefeuille.iml" filepath="$PROJECT_DIR$/Portefeuille.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://C:\Users\khalifa\AndroidStudioProjects\Portefeuille\monPortefeuille.iml" filepath="C:\Users\khalifa\AndroidStudioProjects\Portefeuille\monPortefeuille.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../../khalifa/AndroidStudioProjects/Portefeuille/monPortefeuille.iml" filepath="$PROJECT_DIR$/../../../khalifa/AndroidStudioProjects/Portefeuille/monPortefeuille.iml" />
+      <module fileurl="file://$PROJECT_DIR$/porte.iml" filepath="$PROJECT_DIR$/porte.iml" />
     </modules>
   </component>
 </project>

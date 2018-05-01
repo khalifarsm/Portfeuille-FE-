@@ -33,14 +33,14 @@ public class Personne implements Serializable{
     @SerializedName("pass")
     String pass;
 
-    public Personne(int personneID, String nom, String prenom, String adresse, String email, String pass, Bitmap image) {
+    public Personne(int personneID, String nom, String prenom, String adresse, String email, String pass, Bitmap image1) {
         PersonneID = personneID;
         this.nom = nom;
         this.prenom = prenom;
         this.adresse = adresse;
         this.email = email;
         this.pass = pass;
-        this.image = image;
+        setImage(image1);
     }
 
     public int getPersonneID() {
@@ -107,7 +107,7 @@ public class Personne implements Serializable{
 
 
     @SerializedName("image")
-    Bitmap image;
+    String image;
 
 
     public String toString()
