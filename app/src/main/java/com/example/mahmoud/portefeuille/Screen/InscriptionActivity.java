@@ -107,7 +107,7 @@ public class InscriptionActivity extends AppCompatActivity {
         //envoie de la personne au serveur
         if (connection&&champs&&pass&&format){
 
-            p=new Personne(1,nom.getText().toString(),prenom.getText().toString(),adresse.getText().toString(),email.getText().toString(),pass1.getText().toString(),imageButton.getDrawingCache());
+            p=new Personne(0,nom.getText().toString(),prenom.getText().toString(),adresse.getText().toString(),email.getText().toString(),pass1.getText().toString(),imageButton.getDrawingCache());
             ajoutpersonne(p,this);
         }
 
