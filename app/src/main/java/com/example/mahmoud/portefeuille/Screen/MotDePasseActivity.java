@@ -7,6 +7,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.mahmoud.portefeuille.Presenters.MotDePassePresenter;
+import com.example.mahmoud.portefeuille.Presenters.PasswordGenerator;
 import com.example.mahmoud.portefeuille.R;
 
 import butterknife.BindView;
@@ -30,9 +31,15 @@ public class MotDePasseActivity extends AppCompatActivity {
                 if (exist) {
                     Intent i = new Intent(Intent.ACTION_SEND);
                     i.setType("message/rfc822");
+                    PasswordGenerator passwordGenerator = new PasswordGenerator.PasswordGeneratorBuilder()
+                            .useDigits(true)
+                            .useLower(true)
+                            .useUpper(true)
+                            .build();
+                    String password = passwordGenerator.generate(10);
                     i.putExtra(Intent.EXTRA_EMAIL, email.getText());
                     i.putExtra(Intent.EXTRA_SUBJECT, "Changement de code");
-                    i.putExtra(Intent.EXTRA_TEXT, "body of email");
+                    i.putExtra(Intent.EXTRA_TEXT, "Votre nouveau code est:\n"+password);
                     try {
                         startActivity(Intent.createChooser(i, "Send mail..."));
                         Toast.makeText(getApplicationContext(), "Email envoyé....", Toast.LENGTH_LONG);
