@@ -76,7 +76,7 @@ public class AjoutHistoriqueActivity extends MenuActivity  {
         Boolean checked = ((RadioButton) m).isChecked();
         switch (m.getId()){
             case R.id.rbDepense:
-                if(checked) isRevenu = true;
+                if(checked) isRevenu = false;
                 break;
             case R.id.rbRevenu:
                 if(checked) isRevenu = true;

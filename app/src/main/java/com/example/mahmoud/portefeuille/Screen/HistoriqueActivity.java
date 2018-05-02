@@ -49,9 +49,11 @@ public class HistoriqueActivity extends MenuActivity {
         historiquePresenter = new HistoriquePresenter(this){
             @Override
             public void onHistoriqueLoaded(List<com.example.mahmoud.portefeuille.Models.Historique> historiques) {
-                final ArrayList<com.example.mahmoud.portefeuille.Models.Historique> arrayHistorique = new ArrayList<>();
-                for(com.example.mahmoud.portefeuille.Models.Historique h: historiques){
-                    arrayHistorique.add(h);
+                ArrayList<com.example.mahmoud.portefeuille.Models.Historique> arrayHistorique = new ArrayList<>();
+                //for(com.example.mahmoud.portefeuille.Models.Historique h: historiques){
+                for(int i = historiques.size() ; i > 0 ; i--){
+                    arrayHistorique.add(historiques.get(i-1));
+                    //arrayHistorique.add(h);
                 }
 
                 HistoriqueAdapter adapter = new HistoriqueAdapter(context, R.layout.adapter_view_layout,arrayHistorique);
