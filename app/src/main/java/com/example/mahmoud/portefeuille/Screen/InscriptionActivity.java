@@ -14,12 +14,14 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.mahmoud.portefeuille.Models.Personne;
 import com.example.mahmoud.portefeuille.R;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
+import static com.example.mahmoud.portefeuille.Presenters.InscriptionPresenter.ajoutpersonne;
 import static com.example.mahmoud.portefeuille.Presenters.InscriptionPresenter.connection;
 import static com.example.mahmoud.portefeuille.Presenters.InscriptionPresenter.isValidEmail;
 import static com.example.mahmoud.portefeuille.Presenters.InscriptionPresenter.verificationChampsNull;
@@ -27,7 +29,7 @@ import static com.example.mahmoud.portefeuille.Presenters.InscriptionPresenter.v
 
 public class InscriptionActivity extends AppCompatActivity {
     private static int RESULT_LOAD_IMAGE = 1;
-
+    Personne p;
     @BindView(R.id.nom)
     TextView nom;
     @BindView(R.id.prenom)
@@ -42,6 +44,7 @@ public class InscriptionActivity extends AppCompatActivity {
     TextView pass2;
     @BindView(R.id.imageButton)
     ImageButton imageButton;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -100,6 +103,12 @@ public class InscriptionActivity extends AppCompatActivity {
         //verifier si le format email est valide
         if (!format){
             Toast.makeText(getApplicationContext(),"Revoir votre Email",Toast.LENGTH_LONG);
+        }
+        //envoie de la personne au serveur
+        if (connection&&champs&&pass&&format){
+
+            p=new Personne(0,nom.getText().toString(),prenom.getText().toString(),adresse.getText().toString(),email.getText().toString(),pass1.getText().toString(),imageButton.getDrawingCache());
+            ajoutpersonne(p,this);
         }
 
     }
