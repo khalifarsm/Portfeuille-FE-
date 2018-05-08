@@ -22,6 +22,9 @@ public interface IService {
     @GET("personnes/{email}/{pass}")
     public Call<Personne> getUser(@Path("email") String email,@Path("pass") String pass);
 
+    @GET("personnes/{email}/{pass}/{newpass}")
+    public Call<Personne> setUserPassword(@Path("email") String email,@Path("pass") String pass,@Path("newpass") String newpass);
+
     @GET("historiques/{email}/{pass}")
     public Call<List<Historique>> getHistorique(@Path("email") String email, @Path("pass") String pass);
 

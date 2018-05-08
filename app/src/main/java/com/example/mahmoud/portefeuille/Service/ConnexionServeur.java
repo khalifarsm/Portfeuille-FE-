@@ -44,6 +44,19 @@ public class ConnexionServeur {
 		return call;
 	}
 
+	public Call<Personne> setUserPasswordCall(String email, String pass,String newpass)
+	{
+		Call<Personne> call=null;
+		try {
+			call= service.setUserPassword(email,pass,newpass);
+			return call;
+		} catch (Exception e) {
+			e.printStackTrace();
+			Log.d("ok", e.toString());
+		}
+		return call;
+	}
+
 	public Call<List<Historique>> getHistoriqueCall(String email, String pass)
 	{
 		Call<List<Historique>> call=null;
