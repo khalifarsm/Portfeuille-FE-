@@ -90,19 +90,19 @@ public class InscriptionActivity extends AppCompatActivity {
         boolean format=isValidEmail(eemail);
         //verifier l'existance d'une connection internet
         if (!connection){
-            Toast.makeText(getApplicationContext(),"Pas de connection disponible",Toast.LENGTH_LONG);
+            Toast.makeText(getApplicationContext(),"Pas de connection disponible",Toast.LENGTH_LONG).show();
         }
         //verifier si les champs sont vides
         if (!champs){
-            Toast.makeText(getApplicationContext(),"Remplir tous les champs",Toast.LENGTH_LONG);
+            Toast.makeText(getApplicationContext(),"Remplir tous les champs",Toast.LENGTH_LONG).show();
         }
         //verifier si pass1==pass2
         if (!pass){
-            Toast.makeText(getApplicationContext(),"le premier mot de passe diffère du deuxième",Toast.LENGTH_LONG);
+            Toast.makeText(getApplicationContext(),"le premier mot de passe diffère du deuxième",Toast.LENGTH_LONG).show();
         }
         //verifier si le format email est valide
         if (!format){
-            Toast.makeText(getApplicationContext(),"Revoir votre Email",Toast.LENGTH_LONG);
+            Toast.makeText(getApplicationContext(),"Revoir votre Email",Toast.LENGTH_LONG).show();
         }
         //envoie de la personne au serveur
         if (connection&&champs&&pass&&format){

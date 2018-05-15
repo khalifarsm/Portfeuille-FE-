@@ -46,7 +46,9 @@ public class ProfilActivity extends AppCompatActivity {
         adresse.setText(p.getAdresse());
         email.setText(p.getEmail());
         pass.setText(p.getPass());
-        imageButton.setImageBitmap(p.getImage());
+        if(p.getImage()!=null) {
+            imageButton.setImageBitmap(p.getImage());
+        }
     }
     @OnClick(R.id.btnmodif)
     public void modif() {

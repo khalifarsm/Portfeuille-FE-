@@ -1,9 +1,11 @@
 package com.example.mahmoud.portefeuille.Models;
 
+import android.app.Activity;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.util.Base64;
 
+import com.example.mahmoud.portefeuille.R;
 import com.google.gson.annotations.SerializedName;
 
 import java.io.ByteArrayOutputStream;
@@ -92,8 +94,13 @@ public class Personne implements Serializable{
     }
 
     public Bitmap getImage() {
-        byte[] byteArray=Base64.decode(image,Base64.DEFAULT);
-        return BitmapFactory.decodeByteArray(byteArray, 0, byteArray.length);
+        try {
+            byte[] byteArray = Base64.decode(image, Base64.DEFAULT);
+            return BitmapFactory.decodeByteArray(byteArray, 0, byteArray.length);
+        }
+        catch (Exception ex){
+            return null;
+        }
     }
 
     public void setImage(Bitmap bitmap) {

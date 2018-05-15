@@ -4,6 +4,7 @@ import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.text.TextUtils;
+import android.util.Log;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -74,11 +75,13 @@ public class InscriptionPresenter {
            @Override
            public void onResponse(Call<Integer> call, Response<Integer> response) {
                Toast.makeText(context.getApplicationContext(), "Envoyé", Toast.LENGTH_LONG).show();
+               Log.d("ok", "onResponse: ");
            }
 
            @Override
            public void onFailure(Call<Integer> call, Throwable t) {
                Toast.makeText(context.getApplicationContext(), context.getResources().getString(R.string.connexion_failed), Toast.LENGTH_LONG).show();
+               Log.d("ok", "onFailure: ");
            }
        });
    }
