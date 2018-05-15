@@ -12,6 +12,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.mahmoud.portefeuille.Presenters.LoginPresenter;
@@ -48,6 +49,8 @@ public class MenuClass{
         //nom et prenom
         View headerLayout = navigationView.inflateHeaderView(R.layout.header);
         TextView tv=(TextView) headerLayout.findViewById(R.id.textViewUserName);
+        ImageView imagev=(ImageView) headerLayout.findViewById(R.id.imageViewUserImage);
+        imagev.setImageBitmap(LoginPresenter.user.getImage());
         tv.setText(LoginPresenter.user.toString());
         //
         navigationView.setNavigationItemSelectedListener(

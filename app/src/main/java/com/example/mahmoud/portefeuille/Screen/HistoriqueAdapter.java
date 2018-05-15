@@ -50,10 +50,10 @@ class HistoriqueAdapter extends ArrayAdapter<Historique>{
 
         if(type) {
             tvType.setText("+");
-            linearLayout.setBackgroundColor(convertView.getResources().getColor(R.color.revenu));
+            linearLayout.setBackgroundColor(convertView.getResources().getColor(R.color.revenu2));
         }else{
             tvType.setText("-");
-            linearLayout.setBackgroundColor(convertView.getResources().getColor(R.color.depense));
+            linearLayout.setBackgroundColor(convertView.getResources().getColor(R.color.depense2));
         }
         tvValeur.setText(String.valueOf(valeur));
         tvDate.setText(date);
