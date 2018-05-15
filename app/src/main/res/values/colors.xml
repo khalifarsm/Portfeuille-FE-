@@ -3,8 +3,10 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
-    <color name="depense">#979595</color>
-    <color name="revenu">#eef2ed</color>
+    <color name="depense">#e9130b</color>
+    <color name="revenu">#3ef506</color>
+    <color name="depense2">#bebcbc</color>
+    <color name="revenu2">#f8f9f7</color>
     <color name="epargne">#061ef5</color>
     <color name="theme">#9be4b0</color>
     <color name="header">#8cf2d9</color>
